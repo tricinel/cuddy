@@ -2,7 +2,7 @@
 
 In this stage, you can count the items that have a certain field.
 
->>> If you have the count stage present in your pipeline, the [projection stage](./project.md) is ignored.
+> If you have the count stage present in your pipeline, the [projection stage](./project.md) is ignored.
 
 This stage follows this pattern: `{ countBy: <field> }`.
 

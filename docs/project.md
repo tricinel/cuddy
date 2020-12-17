@@ -32,7 +32,7 @@ Consider the following data set:
 
 will return the items with only the `title` and `author` fields present. The projection stage is always the last stage to run in the pipeline.
 
->>> You can use any fields in all the other stages without an impact in your projection.
+> You can use any fields in all the other stages without an impact in your projection.
 
 ```js
 [{ title: 'abc', author: 'John' }, { title: 'xyz', author: 'Donna' }, { title: 'def', author: 'Gemma' }]
