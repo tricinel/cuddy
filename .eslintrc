@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "frontwerk-typescript",
+    "plugin:import/typescript",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"],
+  "rules": {
+    "prettier/prettier": "error"
+  }
+}
