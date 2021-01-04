@@ -1,4 +1,3 @@
-import consola from 'consola';
 import cuddy from '../cuddy';
 
 describe('Wrong data type for collection', () => {
