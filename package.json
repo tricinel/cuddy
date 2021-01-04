@@ -5,6 +5,7 @@
   "module": "dist/cuddy.mjs",
   "typings": "dist/cuddy.d.ts",
   "license": "MIT",
+  "files": ["dist"],
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "rollup -c",
