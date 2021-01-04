@@ -1,7 +1,5 @@
 {
-  "extends": [
-    "../.eslintrc"
-  ],
+  "extends": ["../.eslintrc"],
   "parserOptions": {
     "project": "./tsconfig.json"
   },
@@ -12,9 +10,7 @@
         "allowAfterThis": true
       }
     ],
-    "import/no-unused-modules": [
-      "warn"
-    ],
+    "import/no-unused-modules": ["warn"],
     "func-style": [
       "error",
       "declaration",
