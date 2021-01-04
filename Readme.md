@@ -79,6 +79,7 @@ The aggregation pipeline contains the following stages:
 - [Grouping](./docs/group.md). Group the items by a specified field.
 - [Count](./docs/count.md). Count the items by a specified field.
 - [Project](./docs/project.md). Limit the fields that are returned for each item.
+- [Transform](./docs/transform.md). Transform any of the properties of the matched items.
 
 ### Pipeline functions
 
