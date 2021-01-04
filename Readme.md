@@ -6,8 +6,6 @@
 >
 > Synonyms: donkey (British slang)
 
-![cuddy logo](./docs/cuddy.png)
-
 The donkey is used as a working animal and is considered the cheapest form of labor.
 
 **cuddy** is an aggregation pipeline built in a functional programming style. If you ever wanted to search through a collection using logical operators, sort, group and return only the fields you care about, then cuddy is for you.
