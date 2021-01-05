@@ -1,10 +1,24 @@
 {
   "name": "cuddy",
+  "description": "An aggregation pipeline built in a functional programming style that lets you search, group, order and transform a collection.",
   "version": "0.1.1",
+  "author": "Bogdan Lazar",
   "main": "dist/cuddy.js",
   "module": "dist/cuddy.mjs",
   "typings": "dist/cuddy.d.ts",
   "license": "MIT",
+  "engines": {
+    "node": ">= 10",
+    "npm": ">= 6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tricinel/cuddy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tricinel/cuddy/issues"
+  },
+  "homepage": "https://github.com/tricinel/cuddy#readme",
   "files": ["dist"],
   "scripts": {
     "prebuild": "rimraf dist",
