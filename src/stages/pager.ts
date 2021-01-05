@@ -5,8 +5,8 @@ import type { LogMessage } from '../utils/errors';
 import toStringIfNeeded from '../utils/toString';
 
 interface Pager {
-  limit: number;
-  skip: number;
+  limit?: number;
+  skip?: number;
 }
 
 export function validate(
