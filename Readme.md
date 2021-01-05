@@ -1,18 +1,12 @@
 # cuddy
 
-> _noun_
->
-> cud·​dy | \ ˈku̇-dē
->
-> Synonyms: donkey (British slang)
+**cuddy** is an aggregation pipeline built in a functional programming style. If you ever wanted to search through a collection using logical operators, sort, group, transform and return only the fields you care about, then cuddy is for you.
 
-The donkey is used as a working animal and is considered the cheapest form of labor.
-
-**cuddy** is an aggregation pipeline built in a functional programming style. If you ever wanted to search through a collection using logical operators, sort, group and return only the fields you care about, then cuddy is for you.
-
-> If it looks like mongodb's query language, it's because lots of inspirations came from there. :)
+![Npm version][npm-version-badge] ![Build status][build-status-badge] ![Node Version][node-version-badge] ![License][license-badge]
 
 ## Install
+
+This module is distributed via npm which is bundled with node and should be installed as one of your project's dependencies:
 
 `npm install cuddy --save` or `yarn add cuddy`
 
@@ -33,6 +27,9 @@ const query = {
     reviews: 'asc'
   },
   groupBy: 'director',
+  transform: {
+    alias: { url: 'permalink' }
+  },
   limit: 2,
   skip: 1
 };
@@ -45,6 +42,7 @@ The above query translates into:
 - I want to order the items by `reviews` in ascending order.
 - I want to group the items by `director`.
 - From all the fields of each item, I only want the `title`, `url` and `runTime`.
+- I want to rename the field `url` to `permalink`.
 
 Next, build the pipeline and aggregate your data.
 
@@ -60,7 +58,7 @@ Depending on the shape of your data, the results could look like this:
   "Robert Smigel": [
     {
       "title": "The Week Of",
-      "url": "https://www.imdb.com/title/tt6821012",
+      "permalink": "https://www.imdb.com/title/tt6821012",
       "runTime": 116
     }
   ]
@@ -68,6 +66,8 @@ Depending on the shape of your data, the results could look like this:
 ```
 
 > For more query examples, see the [Books test cases](./src/__tests__/books.test.ts) and the associated [Books collection](./src/__mocks__/books.ts).
+>
+> If it looks like mongodb's query language, it's because lots of inspirations came from there. :)
 
 ### Stages
 
@@ -90,6 +90,16 @@ Once you've built your pipeline, you can use it to aggregate your data and retur
 * `last()` will return the last result in the list of results from your query.
 * `count()` will return the total number of results from your query.
 
+#### Why cuddy?
+
+> _noun_
+>
+> cud·​dy | \ ˈku̇-dē
+>
+> Synonyms: donkey (British slang)
+
+The donkey is used as a working animal and is considered the cheapest form of labor.
+
 #### Contributing
 
 - Run tests with `npm run test` or `yarn test`.
@@ -102,3 +112,7 @@ For details, check out the [Contributing][contributing] guide.
 MIT
 
 [contributing]: ./Contributing.md
+[license-badge]: https://img.shields.io/npm/l/cuddy.svg?style=flat-square
+[node-version-badge]: https://img.shields.io/node/v/cuddy?style=flat-square
+[npm-version-badge]: https://img.shields.io/npm/v/cuddy?style=flat-square
+[build-status-badge]: https://img.shields.io/circleci/build/github/tricinel/cuddy?label=circleci&style=flat-square
