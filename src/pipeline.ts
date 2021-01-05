@@ -19,10 +19,6 @@ export default function buildPipeline<Item>(
     fns.push(...matchFns(stages.match));
   }
 
-  if (hasStage(stages.transform)) {
-    fns.push(...transformFns(stages.transform));
-  }
-
   if (hasStage(stages.orderBy)) {
     fns.push(order(stages.orderBy));
   }
@@ -59,6 +55,10 @@ export default function buildPipeline<Item>(
     hasStage(stages.fields)
   ) {
     fns.push(pickFields(stages.fields));
+  }
+
+  if (hasStage(stages.transform)) {
+    fns.push(...transformFns(stages.transform));
   }
 
   return fns.length > 0 ? fns : [identity];

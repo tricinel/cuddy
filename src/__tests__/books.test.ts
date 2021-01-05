@@ -144,6 +144,40 @@ describe('Find books', () => {
     `);
   });
 
+  test('change the property name summary to excerpt for all books', () => {
+    const fields: (keyof Book)[] = ['title', 'summary'];
+    const pipeline = cuddy<Book>({
+      fields,
+      transform: { alias: { summary: 'excerpt' } }
+    });
+    const results = pipeline(books).aggregate();
+    expect(results).toHaveLength(books.length);
+    expect(results).toMatchInlineSnapshot(`
+      Array [
+        Object {
+          "excerpt": "This new edition continues to boldly assert that any perception of immeasurability is based on certain popular misconceptions about measurement and measurement methods. It shows the common reasoning for calling something immeasurable, and sets out to correct those ideas.",
+          "title": "How to Measure Anything: Finding the Value of Intangibles in Business",
+        },
+        Object {
+          "excerpt": "Against all odds, Aydin Torkal - aka Sleeper 13 - broke free from the terrorist group that took him as a child and raised him into a life of violence and hate.",
+          "title": "Imposter 13",
+        },
+        Object {
+          "excerpt": "Hunted not only by the world's intelligence agencies, but also by the elite brotherhood of insurgents he betrayed, he has lived the past year like a ghost. Until now",
+          "title": "Fugitive 13",
+        },
+        Object {
+          "excerpt": "That’s what New York City cop Barry Sutton is learning as he investigates the devastating phenomenon the media has dubbed False Memory Syndrome—a mysterious affliction that drives its victims mad with memories of a life they never lived.",
+          "title": "Recursion",
+        },
+        Object {
+          "excerpt": "Jason Dessen is walking home through the chilly Chicago streets one night, looking forward to a quiet evening in front of the fireplace with his wife, Daniela, and their son, Charlie—when his reality shatters.",
+          "title": "Dark Matter",
+        },
+      ]
+    `);
+  });
+
   test('group all books with a rating greater than or equal to 4 by author and pick only the title', () => {
     const match = { gt: { rating: 4 } };
     const groupBy = 'author';
