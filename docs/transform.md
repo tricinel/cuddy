@@ -43,7 +43,7 @@ will rename the `title` property of each item to be `name`, returning:
 ]
 ```
 
-> Known issue: If you combine the `alias` in the `transform` stage with the [projection](./project.md) stage, you need to add the **new** field name to the list of returned fields and not the old one. Because this is Typescript, your editor might complain that the new field doesn't exist on your items.
+> If you combine the `alias` in the `transform` stage with the [projection](./project.md) stage, you need to add the **old** field name to the list of returned fields and not the new one.
 
 **inc**
 

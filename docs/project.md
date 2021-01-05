@@ -38,4 +38,4 @@ will return the items with only the `title` and `author` fields present. The pro
 [{ title: 'abc', author: 'John' }, { title: 'xyz', author: 'Donna' }, { title: 'def', author: 'Gemma' }]
 ```
 
-> Known issue: If you combine the `alias` in the [transform](./transform.md) stage with this stage, you need to add the **new** field name to the list of returned fields and not the old one. Because this is Typescript, your editor might complain that the new field doesn't exist on your items.
+> If you combine the `alias` in the [transform](./transform.md) stage with this stage, you need to add the **old** field name to the list of returned fields and not the new one.
