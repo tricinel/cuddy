@@ -1,6 +1,6 @@
 {
   "name": "cuddy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/cuddy.js",
   "module": "dist/cuddy.mjs",
   "typings": "dist/cuddy.d.ts",
