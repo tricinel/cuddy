@@ -1,3 +1,9 @@
+### v0.2.0
+
+---
+
+- Add the query explainer
+
 ### v0.1.1
 
 ---

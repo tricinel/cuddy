@@ -89,6 +89,7 @@ Once you've built your pipeline, you can use it to aggregate your data and retur
 * `first()` will return the first result in the list of results from your query.
 * `last()` will return the last result in the list of results from your query.
 * `count()` will return the total number of results from your query.
+* `explain()` will return an object explaining the set of steps resulted from your query. For details on the output, see the [Explanation](./docs/explain.md) section.
 
 #### Why cuddy?
 

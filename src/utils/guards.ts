@@ -31,6 +31,10 @@ export function assertValidCollection<Item>(
     throw new TypeError('The collection should be an array');
 }
 
+export function isArray(obj: unknown): obj is unknown[] {
+  return typeof obj === 'object' && obj !== null && obj.constructor === Array;
+}
+
 export function isObject(obj: unknown): obj is Record<string, unknown> {
   return (
     typeof obj === 'object' &&

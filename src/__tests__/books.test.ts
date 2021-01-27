@@ -1,6 +1,7 @@
 import cuddy from '..';
 import books from '../__mocks__/books';
 import type { Book } from '../__mocks__/books';
+import type { Stages } from '../types';
 
 // To simplify some of the inline snapshots, let's pick just the title, author and price
 const defaultFields: (keyof Book)[] = ['title', 'author', 'price'];
@@ -478,6 +479,81 @@ describe('Count books', () => {
       Object {
         "Blake Crouch": 2,
         "Rob Sinclair": 1,
+      }
+    `);
+  });
+});
+
+describe('Explain books', () => {
+  test('explain the query', () => {
+    const query: Partial<Stages<Book>> = {
+      match: {
+        in: { genres: 'Fiction' },
+        gt: { price: 9 },
+        lte: { price: 5 }
+      },
+      orderBy: { ratings: 'asc', reviews: 'desc' },
+      countBy: 'ratings',
+      fields: ['author', 'title', 'ratings']
+    };
+    const pipeline = cuddy<Book>(query);
+    const explanation = pipeline(books).explain();
+
+    expect(explanation).toMatchInlineSnapshot(`
+      Object {
+        "collectionSize": 5,
+        "query": Array [
+          Object {
+            "comparator": "Fiction",
+            "field": "genres",
+            "operator": "in",
+            "query": "'genres' contains 'Fiction'",
+            "type": "match",
+          },
+          Object {
+            "comparator": 9,
+            "field": "price",
+            "operator": "gt",
+            "query": "'price' is greater than '9'",
+            "type": "match",
+          },
+          Object {
+            "comparator": 5,
+            "field": "price",
+            "operator": "lte",
+            "query": "'price' is lower than or equal to '5'",
+            "type": "match",
+          },
+          Object {
+            "field": "ratings",
+            "order": "asc",
+            "query": "'ratings' from lowest to highest",
+            "type": "orderBy",
+          },
+          Object {
+            "field": "reviews",
+            "order": "desc",
+            "query": "'reviews' from highest to lowest",
+            "type": "orderBy",
+          },
+          Object {
+            "projection": Array [
+              "author",
+              "title",
+              "ratings",
+            ],
+            "query": "'author', 'title' and 'ratings'",
+            "type": "fields",
+          },
+          Object {
+            "field": "ratings",
+            "query": "'ratings'",
+            "type": "countBy",
+          },
+        ],
+        "queryHash": "1qtpmis",
+        "summary": "MATCH items in the collection WHERE 'genres' contains 'Fiction' AND 'price' is greater than '9' AND 'price' is lower than or equal to '5'. ORDER the results BY 'ratings' from lowest to highest AND 'reviews' from highest to lowest. ONLY RETURN the 'author', 'title' and 'ratings' fields for each result. COUNT BY 'ratings'",
+        "totalOperations": 7,
       }
     `);
   });
