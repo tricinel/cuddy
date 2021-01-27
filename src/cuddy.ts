@@ -8,10 +8,11 @@ import {
 } from 'ramda';
 import buildPipeline from './pipeline';
 import { assertValidCollection, assertValidStages } from './utils/guards';
-import type { Stages, FunnelWithFns } from './types';
 import validateStages from './utils/validate';
 import log from './utils/log';
 import { groupByLevel, joinErrorMessages } from './utils/errors';
+import explainPipeline from './explain';
+import type { Explanation, Stages, FunnelWithFns } from './types';
 
 function cuddy<Item = Record<string, unknown>>(
   stages: Partial<Stages<Item>>,
@@ -35,6 +36,7 @@ function cuddy<Item = Record<string, unknown>>(
     }
   }
 
+  const explanation: Explanation = explainPipeline<PT>(stages, collection);
   const fns = buildPipeline<PT>(stages);
 
   // @ts-expect-error pipe is only typed for up to 10 args
@@ -47,7 +49,8 @@ function cuddy<Item = Record<string, unknown>>(
     aggregate: () => aggregate(collection),
     first: () => first(collection),
     last: () => last(collection),
-    count: () => count(collection)
+    count: () => count(collection),
+    explain: () => explanation
   };
 }
 

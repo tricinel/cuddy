@@ -1,7 +1,7 @@
 {
   "name": "cuddy",
   "description": "An aggregation pipeline built in a functional programming style that lets you search, group, order and transform a collection.",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "author": "Bogdan Lazar",
   "main": "dist/cuddy.js",
   "module": "dist/cuddy.mjs",
