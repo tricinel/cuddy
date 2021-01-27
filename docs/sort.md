@@ -20,7 +20,7 @@ Consider the following data set:
 ```
 
 ```js
-{ sortBy: { count: 'asc' } }
+{ orderBy: { count: 'asc' } }
 ```
 
 will sort all items by `count` in ascending order, returning:
