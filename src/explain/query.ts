@@ -10,7 +10,7 @@ import { buildOrderByOperation } from './orderBy';
 import { buildGroupByOperation } from './groupBy';
 import { buildTransformOperation } from './transform';
 import sortObjPropsBy from '../utils/sortObjPropsBy';
-import type { Transformations, Stages, Matchers, SortOrder } from '../types';
+import type { Stages, Matchers, SortOrder } from '../types';
 import type { MatchOperation } from './match';
 import type { SkipOperation } from './skip';
 import type { LimitOperation } from './limit';
@@ -34,7 +34,7 @@ export type Operation =
   | GroupByOperation
   | OrderByOperation;
 
-export default function buildQuery<Item extends Record<string, unknown>>(
+export default function buildQuery<Item>(
   stages: Partial<Stages<Item>>
 ): Operation[] {
   type Pair = [keyof Stages<Item>, unknown];
@@ -51,19 +51,6 @@ export default function buildQuery<Item extends Record<string, unknown>>(
             query as Record<
               keyof Matchers<string>,
               Record<string, string | number>
-            >
-          )
-        ];
-        break;
-      }
-      case 'transform': {
-        // eslint-disable-next-line no-param-reassign
-        operations = [
-          ...operations,
-          ...buildTransformOperation(
-            query as Record<
-              keyof Transformations<string>,
-              Record<string, unknown>
             >
           )
         ];
@@ -99,6 +86,14 @@ export default function buildQuery<Item extends Record<string, unknown>>(
         operations = [
           ...operations,
           ...buildOrderByOperation(query as Record<string, SortOrder>)
+        ];
+        break;
+      }
+      case 'transform': {
+        // eslint-disable-next-line no-param-reassign
+        operations = [
+          ...operations,
+          ...buildTransformOperation(query as Record<string, unknown>)
         ];
         break;
       }

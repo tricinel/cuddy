@@ -1,6 +1,6 @@
 import { mapObjIndexed, project, join, difference } from 'ramda';
 import type {
-  InferRecord,
+  ShapeOf,
   PipelineReduceGroupOnceApplied,
   PipelineReduceOnceApplied
 } from '../types';
@@ -23,13 +23,13 @@ export function validate(
   ];
 }
 
-export function pickFields<Item extends InferRecord<Item>>(
+export function pickFields<Item extends ShapeOf<Item>>(
   fields: string[]
 ): PipelineReduceOnceApplied<Item> {
   return project(fields);
 }
 
-export function pickFieldsWhenGrouped<Item extends InferRecord<Item>>(
+export function pickFieldsWhenGrouped<Item extends ShapeOf<Item>>(
   fields: string[]
 ): PipelineReduceGroupOnceApplied<Item> {
   return mapObjIndexed(pickFields<Item>(fields));

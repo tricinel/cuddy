@@ -15,5 +15,5 @@ test('Builds the summary for the countBy', () => {
     field: 'title',
     query: "'title'"
   };
-  expect(explainCountBy(operation)).toEqual(`COUNT BY 'title'`);
+  expect(explainCountBy(operation)).toEqual(`COUNT the results BY 'title'`);
 });

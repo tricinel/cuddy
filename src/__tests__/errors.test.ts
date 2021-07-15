@@ -72,13 +72,13 @@ describe('Wrong data type for stages', () => {
             // @ts-expect-error count should be a number
             match: { gt: { count: 'foo' } },
             // @ts-expect-error reviews should be a number
-            transform: { inc: { reviews: 'bar' } }
+            transform: { reviews: 'bar' }
           },
           [{ count: 1, reviews: 2 }]
         );
       }).toThrowErrorMatchingInlineSnapshot(`
         "'match.gt.count' should be a 'Number'. You passed 'foo'.
-        'transform.inc.reviews' should be a 'Number'. You passed 'bar'."
+        'transform.reviews' should be a 'Function'. You passed 'bar'."
       `);
     });
   });

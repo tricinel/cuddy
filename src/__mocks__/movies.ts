@@ -46,8 +46,7 @@ const movies: Movie[] = [
     ],
     lang: 'Nepali',
     reviews: 697,
-    url:
-      'http://washingtonpost.com/ultrices/enim/lorem/ipsum/dolor/sit/amet.png',
+    url: 'http://washingtonpost.com/ultrices/enim/lorem/ipsum/dolor/sit/amet.png',
     releaseDate: '4/8/2020',
     boxOffice: 16609457.17,
     genre: ['documentary']
@@ -83,8 +82,7 @@ const movies: Movie[] = [
     ],
     lang: 'Czech',
     reviews: 8,
-    url:
-      'http://nsw.gov.au/ridiculus/mus/vivamus/vestibulum/sagittis/sapien/cum.jpg',
+    url: 'http://nsw.gov.au/ridiculus/mus/vivamus/vestibulum/sagittis/sapien/cum.jpg',
     releaseDate: '8/15/2020',
     boxOffice: 11881510.02,
     genre: ['(no genres listed)']
@@ -102,8 +100,7 @@ const movies: Movie[] = [
     ],
     lang: 'Polish',
     reviews: 687,
-    url:
-      'http://posterous.com/quis/orci/eget/orci/vehicula/condimentum/curabitur.aspx',
+    url: 'http://posterous.com/quis/orci/eget/orci/vehicula/condimentum/curabitur.aspx',
     releaseDate: '3/14/2020',
     boxOffice: 15285776.91,
     genre: ['documentary']
@@ -121,8 +118,7 @@ const movies: Movie[] = [
     ],
     lang: 'Mongolian',
     reviews: 68122,
-    url:
-      'https://chronoengine.com/urna/pretium/nisl/ut/volutpat/sapien/arcu.aspx',
+    url: 'https://chronoengine.com/urna/pretium/nisl/ut/volutpat/sapien/arcu.aspx',
     releaseDate: '5/17/2020',
     boxOffice: 16458995.88,
     genre: ['documentary']
@@ -158,8 +154,7 @@ const movies: Movie[] = [
     ],
     lang: 'Azeri',
     reviews: 2867,
-    url:
-      'https://google.pl/tempor/convallis/nulla/neque/libero/convallis/eget.jpg',
+    url: 'https://google.pl/tempor/convallis/nulla/neque/libero/convallis/eget.jpg',
     releaseDate: '11/8/2019',
     boxOffice: 19309505.49,
     genre: ['documentary']
@@ -591,8 +586,7 @@ const movies: Movie[] = [
     ],
     lang: 'West Frisian',
     reviews: 4,
-    url:
-      'https://wiley.com/lorem/integer/tincidunt/ante/vel/ipsum/praesent.xml',
+    url: 'https://wiley.com/lorem/integer/tincidunt/ante/vel/ipsum/praesent.xml',
     releaseDate: '6/30/2020',
     boxOffice: 10853703.73,
     genre: ['children', 'drama']
@@ -1006,8 +1000,7 @@ const movies: Movie[] = [
     ],
     lang: 'Japanese',
     reviews: 69,
-    url:
-      'https://addtoany.com/duis/faucibus/accumsan/odio/curabitur/convallis.aspx',
+    url: 'https://addtoany.com/duis/faucibus/accumsan/odio/curabitur/convallis.aspx',
     releaseDate: '7/15/2020',
     boxOffice: 12735384.31,
     genre: ['comedy', 'romance']
@@ -1025,8 +1018,7 @@ const movies: Movie[] = [
     ],
     lang: 'Kannada',
     reviews: 72406,
-    url:
-      'https://diigo.com/vestibulum/sagittis/sapien/cum/sociis/natoque/penatibus.json',
+    url: 'https://diigo.com/vestibulum/sagittis/sapien/cum/sociis/natoque/penatibus.json',
     releaseDate: '8/6/2020',
     boxOffice: 16919737.32,
     genre: ['action', 'adventure']
@@ -1134,8 +1126,7 @@ const movies: Movie[] = [
     ],
     lang: 'Thai',
     reviews: 5286,
-    url:
-      'http://diigo.com/ultrices/posuere/cubilia/curae/mauris/viverra/diam.png',
+    url: 'http://diigo.com/ultrices/posuere/cubilia/curae/mauris/viverra/diam.png',
     releaseDate: '6/9/2020',
     boxOffice: 13378983.54,
     genre: ['comedy', 'drama', 'romance']
@@ -1243,8 +1234,7 @@ const movies: Movie[] = [
     ],
     lang: 'Lao',
     reviews: 72,
-    url:
-      'https://macromedia.com/vestibulum/sit/amet/cursus/id/turpis/integer.xml',
+    url: 'https://macromedia.com/vestibulum/sit/amet/cursus/id/turpis/integer.xml',
     releaseDate: '8/20/2020',
     boxOffice: 18823719.55,
     genre: ['drama', 'war']
@@ -1460,8 +1450,7 @@ const movies: Movie[] = [
     ],
     lang: 'Gujarati',
     reviews: 85214,
-    url:
-      'http://springer.com/feugiat/non/pretium/quis/lectus/suspendisse/potenti.png',
+    url: 'http://springer.com/feugiat/non/pretium/quis/lectus/suspendisse/potenti.png',
     releaseDate: '10/11/2019',
     boxOffice: 7278299.94,
     genre: ['crime', 'film-noir', 'mystery', 'romance', 'thriller']
@@ -1751,8 +1740,7 @@ const movies: Movie[] = [
     ],
     lang: 'Spanish',
     reviews: 50,
-    url:
-      'http://howstuffworks.com/tortor/duis/mattis/egestas/metus/aenean/fermentum.json',
+    url: 'http://howstuffworks.com/tortor/duis/mattis/egestas/metus/aenean/fermentum.json',
     releaseDate: '4/17/2020',
     boxOffice: 6233350.58,
     genre: ['comedy', 'drama', 'romance']
@@ -1788,8 +1776,7 @@ const movies: Movie[] = [
     ],
     lang: 'Malagasy',
     reviews: 17654,
-    url:
-      'https://usnews.com/id/ligula/suspendisse/ornare/consequat/lectus/in.png',
+    url: 'https://usnews.com/id/ligula/suspendisse/ornare/consequat/lectus/in.png',
     releaseDate: '12/9/2019',
     boxOffice: 19203909.89,
     genre: ['horror']
@@ -1843,8 +1830,7 @@ const movies: Movie[] = [
     ],
     lang: 'Tswana',
     reviews: 516,
-    url:
-      'http://friendfeed.com/amet/lobortis/sapien/sapien/non/mi/integer.aspx',
+    url: 'http://friendfeed.com/amet/lobortis/sapien/sapien/non/mi/integer.aspx',
     releaseDate: '6/10/2020',
     boxOffice: 5489661.2,
     genre: ['children', 'comedy']
@@ -2006,8 +1992,7 @@ const movies: Movie[] = [
     ],
     lang: 'Maltese',
     reviews: 39,
-    url:
-      'http://so-net.ne.jp/non/velit/nec/nisi/vulputate/nonummy/maecenas.json',
+    url: 'http://so-net.ne.jp/non/velit/nec/nisi/vulputate/nonummy/maecenas.json',
     releaseDate: '12/1/2019',
     boxOffice: 12846871.49,
     genre: ['comedy', 'drama']
@@ -2152,8 +2137,7 @@ const movies: Movie[] = [
     ],
     lang: 'Gujarati',
     reviews: 6,
-    url:
-      'http://wordpress.com/diam/cras/pellentesque/volutpat/dui/maecenas.jpg',
+    url: 'http://wordpress.com/diam/cras/pellentesque/volutpat/dui/maecenas.jpg',
     releaseDate: '6/6/2020',
     boxOffice: 12210274.93,
     genre: ['sci-fi', 'thriller']
@@ -2549,8 +2533,7 @@ const movies: Movie[] = [
     ],
     lang: 'Bulgarian',
     reviews: 82,
-    url:
-      'https://wiley.com/ipsum/praesent/blandit/lacinia/erat/vestibulum.aspx',
+    url: 'https://wiley.com/ipsum/praesent/blandit/lacinia/erat/vestibulum.aspx',
     releaseDate: '1/18/2020',
     boxOffice: 19942039.84,
     genre: ['adventure', 'romance']
@@ -2568,8 +2551,7 @@ const movies: Movie[] = [
     ],
     lang: 'Czech',
     reviews: 5324,
-    url:
-      'https://nytimes.com/elit/proin/interdum/mauris/non/ligula/pellentesque.html',
+    url: 'https://nytimes.com/elit/proin/interdum/mauris/non/ligula/pellentesque.html',
     releaseDate: '12/4/2019',
     boxOffice: 12307415.54,
     genre: ['action', 'adventure', 'drama', 'romance', 'thriller', 'western']
@@ -2695,8 +2677,7 @@ const movies: Movie[] = [
     ],
     lang: 'Chinese',
     reviews: 50,
-    url:
-      'http://google.com.au/diam/cras/pellentesque/volutpat/dui/maecenas/tristique.aspx',
+    url: 'http://google.com.au/diam/cras/pellentesque/volutpat/dui/maecenas/tristique.aspx',
     releaseDate: '11/6/2019',
     boxOffice: 10663312.52,
     genre: ['drama', 'western']
@@ -3219,8 +3200,7 @@ const movies: Movie[] = [
     ],
     lang: 'Nepali',
     reviews: 343,
-    url:
-      'https://instagram.com/habitasse/platea/dictumst/morbi/vestibulum/velit.json',
+    url: 'https://instagram.com/habitasse/platea/dictumst/morbi/vestibulum/velit.json',
     releaseDate: '2/24/2020',
     boxOffice: 10625776.05,
     genre: ['drama', 'romance']
@@ -3329,8 +3309,7 @@ const movies: Movie[] = [
     ],
     lang: 'Tsonga',
     reviews: 567,
-    url:
-      'https://sfgate.com/habitasse/platea/dictumst/etiam/faucibus/cursus/urna.html',
+    url: 'https://sfgate.com/habitasse/platea/dictumst/etiam/faucibus/cursus/urna.html',
     releaseDate: '6/23/2020',
     boxOffice: 6138108.32,
     genre: ['drama']
@@ -3492,8 +3471,7 @@ const movies: Movie[] = [
     ],
     lang: 'Romanian',
     reviews: 69,
-    url:
-      'http://nymag.com/lectus/pellentesque/at/nulla/suspendisse/potenti/cras.json',
+    url: 'http://nymag.com/lectus/pellentesque/at/nulla/suspendisse/potenti/cras.json',
     releaseDate: '3/25/2020',
     boxOffice: 11548853.77,
     genre: ['mystery']
@@ -3547,8 +3525,7 @@ const movies: Movie[] = [
     ],
     lang: 'Danish',
     reviews: 18,
-    url:
-      'https://jalbum.net/mollis/molestie/lorem/quisque/ut/erat/curabitur.xml',
+    url: 'https://jalbum.net/mollis/molestie/lorem/quisque/ut/erat/curabitur.xml',
     releaseDate: '9/18/2020',
     boxOffice: 5776749.25,
     genre: ['drama']
@@ -3566,8 +3543,7 @@ const movies: Movie[] = [
     ],
     lang: 'Azeri',
     reviews: 38731,
-    url:
-      'https://nytimes.com/lectus/pellentesque/at/nulla/suspendisse/potenti/cras.jpg',
+    url: 'https://nytimes.com/lectus/pellentesque/at/nulla/suspendisse/potenti/cras.jpg',
     releaseDate: '7/5/2020',
     boxOffice: 12136917.73,
     genre: ['comedy', 'romance']
@@ -3911,8 +3887,7 @@ const movies: Movie[] = [
     ],
     lang: 'Moldovan',
     reviews: 259,
-    url:
-      'http://comsenz.com/pellentesque/quisque/porta/volutpat/erat/quisque.jsp',
+    url: 'http://comsenz.com/pellentesque/quisque/porta/volutpat/erat/quisque.jsp',
     releaseDate: '6/5/2020',
     boxOffice: 18007814.93,
     genre: ['drama']
@@ -4002,8 +3977,7 @@ const movies: Movie[] = [
     ],
     lang: 'Māori',
     reviews: 5,
-    url:
-      'http://cbsnews.com/dictumst/aliquam/augue/quam/sollicitudin/vitae.html',
+    url: 'http://cbsnews.com/dictumst/aliquam/augue/quam/sollicitudin/vitae.html',
     releaseDate: '11/29/2019',
     boxOffice: 12605256.59,
     genre: ['action', 'crime']
@@ -4346,8 +4320,7 @@ const movies: Movie[] = [
     ],
     lang: 'Aymara',
     reviews: 2270,
-    url:
-      'https://wordpress.org/pharetra/magna/ac/consequat/metus/sapien/ut.json',
+    url: 'https://wordpress.org/pharetra/magna/ac/consequat/metus/sapien/ut.json',
     releaseDate: '2/1/2020',
     boxOffice: 10069157.1,
     genre: ['comedy']
@@ -4888,8 +4861,7 @@ const movies: Movie[] = [
     ],
     lang: 'Estonian',
     reviews: 367,
-    url:
-      'http://quantcast.com/pulvinar/nulla/pede/ullamcorper/augue/a/suscipit.json',
+    url: 'http://quantcast.com/pulvinar/nulla/pede/ullamcorper/augue/a/suscipit.json',
     releaseDate: '12/10/2019',
     boxOffice: 5788350.11,
     genre: ['action', 'comedy']
@@ -5141,8 +5113,7 @@ const movies: Movie[] = [
     ],
     lang: 'Filipino',
     reviews: 33,
-    url:
-      'http://typepad.com/augue/quam/sollicitudin/vitae/consectetuer/eget.jsp',
+    url: 'http://typepad.com/augue/quam/sollicitudin/vitae/consectetuer/eget.jsp',
     releaseDate: '6/24/2020',
     boxOffice: 18269898.67,
     genre: ['crime', 'drama', 'mystery', 'thriller']
@@ -5232,8 +5203,7 @@ const movies: Movie[] = [
     ],
     lang: 'Luxembourgish',
     reviews: 1,
-    url:
-      'http://mit.edu/magna/vulputate/luctus/cum/sociis/natoque/penatibus.html',
+    url: 'http://mit.edu/magna/vulputate/luctus/cum/sociis/natoque/penatibus.html',
     releaseDate: '5/31/2020',
     boxOffice: 17313771.67,
     genre: ['comedy']
@@ -5305,8 +5275,7 @@ const movies: Movie[] = [
     ],
     lang: 'Thai',
     reviews: 10630,
-    url:
-      'https://umich.edu/ipsum/dolor/sit/amet/consectetuer/adipiscing/elit.xml',
+    url: 'https://umich.edu/ipsum/dolor/sit/amet/consectetuer/adipiscing/elit.xml',
     releaseDate: '8/28/2020',
     boxOffice: 16812829.4,
     genre: ['comedy', 'drama']
@@ -5324,8 +5293,7 @@ const movies: Movie[] = [
     ],
     lang: 'Hebrew',
     reviews: 5272,
-    url:
-      'https://miitbeian.gov.cn/aliquet/ultrices/erat/tortor/sollicitudin.jsp',
+    url: 'https://miitbeian.gov.cn/aliquet/ultrices/erat/tortor/sollicitudin.jsp',
     releaseDate: '7/13/2020',
     boxOffice: 5239101.66,
     genre: ['comedy', 'drama', 'horror']
@@ -5397,8 +5365,7 @@ const movies: Movie[] = [
     ],
     lang: 'Polish',
     reviews: 94134,
-    url:
-      'http://soundcloud.com/posuere/cubilia/curae/mauris/viverra/diam/vitae.png',
+    url: 'http://soundcloud.com/posuere/cubilia/curae/mauris/viverra/diam/vitae.png',
     releaseDate: '1/23/2020',
     boxOffice: 9671083.4,
     genre: ['comedy', 'drama']
@@ -6661,8 +6628,7 @@ const movies: Movie[] = [
     ],
     lang: 'Danish',
     reviews: 1758,
-    url:
-      'http://shareasale.com/id/ornare/imperdiet/sapien/urna/pretium/nisl.jsp',
+    url: 'http://shareasale.com/id/ornare/imperdiet/sapien/urna/pretium/nisl.jsp',
     releaseDate: '11/2/2019',
     boxOffice: 9849749.24,
     genre: ['animation', 'children']
@@ -6680,8 +6646,7 @@ const movies: Movie[] = [
     ],
     lang: 'Filipino',
     reviews: 50637,
-    url:
-      'https://redcross.org/vulputate/ut/ultrices/vel/augue/vestibulum/ante.html',
+    url: 'https://redcross.org/vulputate/ut/ultrices/vel/augue/vestibulum/ante.html',
     releaseDate: '7/24/2020',
     boxOffice: 10421082.76,
     genre: ['comedy', 'horror', 'romance']
@@ -6879,8 +6844,7 @@ const movies: Movie[] = [
     ],
     lang: 'Moldovan',
     reviews: 81,
-    url:
-      'http://arstechnica.com/condimentum/neque/sapien/placerat/ante/nulla.js',
+    url: 'http://arstechnica.com/condimentum/neque/sapien/placerat/ante/nulla.js',
     releaseDate: '1/1/2020',
     boxOffice: 5327465.04,
     genre: ['comedy', 'drama', 'romance']
@@ -6916,8 +6880,7 @@ const movies: Movie[] = [
     ],
     lang: 'Tajik',
     reviews: 938,
-    url:
-      'http://unicef.org/vestibulum/rutrum/rutrum/neque/aenean/auctor/gravida.html',
+    url: 'http://unicef.org/vestibulum/rutrum/rutrum/neque/aenean/auctor/gravida.html',
     releaseDate: '6/10/2020',
     boxOffice: 8918222.5,
     genre: ['horror']
@@ -6971,8 +6934,7 @@ const movies: Movie[] = [
     ],
     lang: 'Marathi',
     reviews: 25114,
-    url:
-      'https://goo.ne.jp/parturient/montes/nascetur/ridiculus/mus/vivamus/vestibulum.aspx',
+    url: 'https://goo.ne.jp/parturient/montes/nascetur/ridiculus/mus/vivamus/vestibulum.aspx',
     releaseDate: '7/27/2020',
     boxOffice: 11315248.16,
     genre: ['documentary']
@@ -7098,8 +7060,7 @@ const movies: Movie[] = [
     ],
     lang: 'Tamil',
     reviews: 399,
-    url:
-      'https://webnode.com/congue/elementum/in/hac/habitasse/platea/dictumst.js',
+    url: 'https://webnode.com/congue/elementum/in/hac/habitasse/platea/dictumst.js',
     releaseDate: '3/20/2020',
     boxOffice: 18356935.23,
     genre: ['comedy', 'romance', 'thriller']
@@ -7135,8 +7096,7 @@ const movies: Movie[] = [
     ],
     lang: 'Nepali',
     reviews: 67219,
-    url:
-      'https://cornell.edu/hac/habitasse/platea/dictumst/etiam/faucibus/cursus.html',
+    url: 'https://cornell.edu/hac/habitasse/platea/dictumst/etiam/faucibus/cursus.html',
     releaseDate: '4/3/2020',
     boxOffice: 16539126.02,
     genre: ['children', 'fantasy']
@@ -7694,8 +7654,7 @@ const movies: Movie[] = [
     ],
     lang: 'Catalan',
     reviews: 8,
-    url:
-      'https://businessinsider.com/nulla/suscipit/ligula/in/lacus/curabitur.aspx',
+    url: 'https://businessinsider.com/nulla/suscipit/ligula/in/lacus/curabitur.aspx',
     releaseDate: '12/12/2019',
     boxOffice: 19137848.82,
     genre: ['comedy', 'drama', 'romance']
@@ -8452,8 +8411,7 @@ const movies: Movie[] = [
     ],
     lang: 'Filipino',
     reviews: 783,
-    url:
-      'http://merriam-webster.com/cum/sociis/natoque/penatibus/et/magnis/dis.jpg',
+    url: 'http://merriam-webster.com/cum/sociis/natoque/penatibus/et/magnis/dis.jpg',
     releaseDate: '5/17/2020',
     boxOffice: 14246101.25,
     genre: ['drama']
@@ -8615,8 +8573,7 @@ const movies: Movie[] = [
     ],
     lang: 'Irish Gaelic',
     reviews: 529,
-    url:
-      'http://hao123.com/sagittis/sapien/cum/sociis/natoque/penatibus/et.aspx',
+    url: 'http://hao123.com/sagittis/sapien/cum/sociis/natoque/penatibus/et.aspx',
     releaseDate: '2/7/2020',
     boxOffice: 7497282.37,
     genre: ['comedy', 'musical']
@@ -8634,8 +8591,7 @@ const movies: Movie[] = [
     ],
     lang: 'Mongolian',
     reviews: 5,
-    url:
-      'https://acquirethisname.com/lobortis/vel/dapibus/at/diam/nam/tristique.aspx',
+    url: 'https://acquirethisname.com/lobortis/vel/dapibus/at/diam/nam/tristique.aspx',
     releaseDate: '9/10/2020',
     boxOffice: 7171271.5,
     genre: ['action', 'crime', 'drama']
@@ -8707,8 +8663,7 @@ const movies: Movie[] = [
     ],
     lang: 'Afrikaans',
     reviews: 20,
-    url:
-      'http://oaic.gov.au/ac/est/lacinia/nisi/venenatis/tristique/fusce.json',
+    url: 'http://oaic.gov.au/ac/est/lacinia/nisi/venenatis/tristique/fusce.json',
     releaseDate: '4/17/2020',
     boxOffice: 18998680.1,
     genre: ['drama']
@@ -9105,8 +9060,7 @@ const movies: Movie[] = [
     ],
     lang: 'Italian',
     reviews: 4,
-    url:
-      'http://cafepress.com/lorem/integer/tincidunt/ante/vel/ipsum/praesent.jpg',
+    url: 'http://cafepress.com/lorem/integer/tincidunt/ante/vel/ipsum/praesent.jpg',
     releaseDate: '6/15/2020',
     boxOffice: 9847353.8,
     genre: ['drama', 'romance']
@@ -10060,8 +10014,7 @@ const movies: Movie[] = [
     ],
     lang: 'Lao',
     reviews: 20942,
-    url:
-      'http://parallels.com/cras/pellentesque/volutpat/dui/maecenas/tristique/est.jpg',
+    url: 'http://parallels.com/cras/pellentesque/volutpat/dui/maecenas/tristique/est.jpg',
     releaseDate: '4/13/2020',
     boxOffice: 19915860.34,
     genre: ['horror', 'thriller']
@@ -10387,8 +10340,7 @@ const movies: Movie[] = [
     ],
     lang: 'Norwegian',
     reviews: 42,
-    url:
-      'https://umich.edu/nascetur/ridiculus/mus/vivamus/vestibulum/sagittis.png',
+    url: 'https://umich.edu/nascetur/ridiculus/mus/vivamus/vestibulum/sagittis.png',
     releaseDate: '11/11/2019',
     boxOffice: 17779944.84,
     genre: ['crime', 'drama']
@@ -10589,8 +10541,7 @@ const movies: Movie[] = [
     ],
     lang: 'Macedonian',
     reviews: 88769,
-    url:
-      'http://jiathis.com/maecenas/pulvinar/lobortis/est/phasellus/sit/amet.xml',
+    url: 'http://jiathis.com/maecenas/pulvinar/lobortis/est/phasellus/sit/amet.xml',
     releaseDate: '9/7/2020',
     boxOffice: 19826261.38,
     genre: ['action', 'adventure', 'animation']
@@ -11004,8 +10955,7 @@ const movies: Movie[] = [
     ],
     lang: 'Greek',
     reviews: 8,
-    url:
-      'http://utexas.edu/duis/faucibus/accumsan/odio/curabitur/convallis/duis.json',
+    url: 'http://utexas.edu/duis/faucibus/accumsan/odio/curabitur/convallis/duis.json',
     releaseDate: '2/7/2020',
     boxOffice: 7125429.12,
     genre: ['comedy']
@@ -11149,8 +11099,7 @@ const movies: Movie[] = [
     ],
     lang: 'Ndebele',
     reviews: 9577,
-    url:
-      'http://gov.uk/pretium/quis/lectus/suspendisse/potenti/in/eleifend.xml',
+    url: 'http://gov.uk/pretium/quis/lectus/suspendisse/potenti/in/eleifend.xml',
     releaseDate: '8/30/2020',
     boxOffice: 18793146.39,
     genre: ['drama', 'thriller']
@@ -11222,8 +11171,7 @@ const movies: Movie[] = [
     ],
     lang: 'Macedonian',
     reviews: 74,
-    url:
-      'https://prlog.org/orci/eget/orci/vehicula/condimentum/curabitur/in.jsp',
+    url: 'https://prlog.org/orci/eget/orci/vehicula/condimentum/curabitur/in.jsp',
     releaseDate: '11/9/2019',
     boxOffice: 6343589.65,
     genre: ['drama', 'war']
@@ -11295,8 +11243,7 @@ const movies: Movie[] = [
     ],
     lang: 'Dari',
     reviews: 4154,
-    url:
-      'https://trellian.com/iaculis/diam/erat/fermentum/justo/nec/condimentum.png',
+    url: 'https://trellian.com/iaculis/diam/erat/fermentum/justo/nec/condimentum.png',
     releaseDate: '12/30/2019',
     boxOffice: 17062138.93,
     genre: ['comedy', 'drama', 'romance']
@@ -11729,8 +11676,7 @@ const movies: Movie[] = [
     ],
     lang: 'Swati',
     reviews: 72,
-    url:
-      'https://mapy.cz/tempor/convallis/nulla/neque/libero/convallis/eget.js',
+    url: 'https://mapy.cz/tempor/convallis/nulla/neque/libero/convallis/eget.js',
     releaseDate: '10/3/2019',
     boxOffice: 14375165.9,
     genre: ['comedy', 'romance']
@@ -12091,8 +12037,7 @@ const movies: Movie[] = [
     ],
     lang: 'Dari',
     reviews: 5203,
-    url:
-      'https://nationalgeographic.com/velit/donec/diam/neque/vestibulum/eget/vulputate.js',
+    url: 'https://nationalgeographic.com/velit/donec/diam/neque/vestibulum/eget/vulputate.js',
     releaseDate: '5/17/2020',
     boxOffice: 10920230.24,
     genre: ['horror']
@@ -12434,8 +12379,7 @@ const movies: Movie[] = [
     ],
     lang: 'Bengali',
     reviews: 518,
-    url:
-      'https://technorati.com/vel/augue/vestibulum/rutrum/rutrum/neque/aenean.js',
+    url: 'https://technorati.com/vel/augue/vestibulum/rutrum/rutrum/neque/aenean.js',
     releaseDate: '6/25/2020',
     boxOffice: 11487214.41,
     genre: ['comedy']
@@ -12471,8 +12415,7 @@ const movies: Movie[] = [
     ],
     lang: 'Zulu',
     reviews: 1063,
-    url:
-      'http://furl.net/adipiscing/elit/proin/risus/praesent/lectus/vestibulum.js',
+    url: 'http://furl.net/adipiscing/elit/proin/risus/praesent/lectus/vestibulum.js',
     releaseDate: '3/6/2020',
     boxOffice: 11190119.82,
     genre: ['crime', 'drama', 'thriller']
@@ -12814,8 +12757,7 @@ const movies: Movie[] = [
     ],
     lang: 'Nepali',
     reviews: 589,
-    url:
-      'https://apache.org/aliquet/ultrices/erat/tortor/sollicitudin/mi/sit.jsp',
+    url: 'https://apache.org/aliquet/ultrices/erat/tortor/sollicitudin/mi/sit.jsp',
     releaseDate: '11/24/2019',
     boxOffice: 10023705.37,
     genre: ['comedy', 'crime']
@@ -12833,8 +12775,7 @@ const movies: Movie[] = [
     ],
     lang: 'Quechua',
     reviews: 78,
-    url:
-      'https://example.com/congue/elementum/in/hac/habitasse/platea/dictumst.png',
+    url: 'https://example.com/congue/elementum/in/hac/habitasse/platea/dictumst.png',
     releaseDate: '7/21/2020',
     boxOffice: 13121851.23,
     genre: ['drama', 'mystery', 'thriller']
@@ -13266,8 +13207,7 @@ const movies: Movie[] = [
     ],
     lang: 'Maltese',
     reviews: 1503,
-    url:
-      'https://telegraph.co.uk/morbi/odio/odio/elementum/eu/interdum/eu.html',
+    url: 'https://telegraph.co.uk/morbi/odio/odio/elementum/eu/interdum/eu.html',
     releaseDate: '10/13/2019',
     boxOffice: 13907639.96,
     genre: ['adventure', 'comedy', 'drama']
@@ -13430,8 +13370,7 @@ const movies: Movie[] = [
     ],
     lang: 'Hindi',
     reviews: 737,
-    url:
-      'http://wunderground.com/orci/eget/orci/vehicula/condimentum/curabitur/in.js',
+    url: 'http://wunderground.com/orci/eget/orci/vehicula/condimentum/curabitur/in.js',
     releaseDate: '3/4/2020',
     boxOffice: 9154715.36,
     genre: ['comedy']
@@ -13719,8 +13658,7 @@ const movies: Movie[] = [
     ],
     lang: 'West Frisian',
     reviews: 435,
-    url:
-      'https://nsw.gov.au/consectetuer/adipiscing/elit/proin/risus/praesent.png',
+    url: 'https://nsw.gov.au/consectetuer/adipiscing/elit/proin/risus/praesent.png',
     releaseDate: '9/8/2020',
     boxOffice: 5905540.5,
     genre: ['drama']
@@ -14062,8 +14000,7 @@ const movies: Movie[] = [
     ],
     lang: 'Tamil',
     reviews: 459,
-    url:
-      'https://mozilla.com/tellus/semper/interdum/mauris/ullamcorper/purus/sit.js',
+    url: 'https://mozilla.com/tellus/semper/interdum/mauris/ullamcorper/purus/sit.js',
     releaseDate: '12/31/2019',
     boxOffice: 14334408.84,
     genre: ['animation', 'children']
@@ -14117,8 +14054,7 @@ const movies: Movie[] = [
     ],
     lang: 'Croatian',
     reviews: 1,
-    url:
-      'https://sogou.com/vel/ipsum/praesent/blandit/lacinia/erat/vestibulum.xml',
+    url: 'https://sogou.com/vel/ipsum/praesent/blandit/lacinia/erat/vestibulum.xml',
     releaseDate: '3/24/2020',
     boxOffice: 15598898.56,
     genre: ['comedy', 'drama']
@@ -14424,8 +14360,7 @@ const movies: Movie[] = [
     ],
     lang: 'West Frisian',
     reviews: 43750,
-    url:
-      'http://bbb.org/pellentesque/ultrices/phasellus/id/sapien/in/sapien.jpg',
+    url: 'http://bbb.org/pellentesque/ultrices/phasellus/id/sapien/in/sapien.jpg',
     releaseDate: '7/10/2020',
     boxOffice: 16555073.02,
     genre: ['comedy', 'drama', 'romance']
@@ -14497,8 +14432,7 @@ const movies: Movie[] = [
     ],
     lang: 'Albanian',
     reviews: 6026,
-    url:
-      'https://dailymail.co.uk/nisl/duis/bibendum/felis/sed/interdum/venenatis.xml',
+    url: 'https://dailymail.co.uk/nisl/duis/bibendum/felis/sed/interdum/venenatis.xml',
     releaseDate: '2/7/2020',
     boxOffice: 19525248.07,
     genre: ['action', 'comedy', 'crime']
@@ -14768,8 +14702,7 @@ const movies: Movie[] = [
     ],
     lang: 'Bosnian',
     reviews: 13,
-    url:
-      'http://feedburner.com/nulla/suscipit/ligula/in/lacus/curabitur/at.json',
+    url: 'http://feedburner.com/nulla/suscipit/ligula/in/lacus/curabitur/at.json',
     releaseDate: '2/2/2020',
     boxOffice: 5829227.32,
     genre: ['drama', 'thriller']
@@ -15399,8 +15332,7 @@ const movies: Movie[] = [
     ],
     lang: 'Guaraní',
     reviews: 32,
-    url:
-      'http://cisco.com/in/lectus/pellentesque/at/nulla/suspendisse/potenti.xml',
+    url: 'http://cisco.com/in/lectus/pellentesque/at/nulla/suspendisse/potenti.xml',
     releaseDate: '7/28/2020',
     boxOffice: 8111778.68,
     genre: ['animation', 'children', 'fantasy']
@@ -15418,8 +15350,7 @@ const movies: Movie[] = [
     ],
     lang: 'Dhivehi',
     reviews: 226,
-    url:
-      'https://csmonitor.com/nulla/integer/pede/justo/lacinia/eget/tincidunt.aspx',
+    url: 'https://csmonitor.com/nulla/integer/pede/justo/lacinia/eget/tincidunt.aspx',
     releaseDate: '11/28/2019',
     boxOffice: 11076740.48,
     genre: ['action', 'adventure', 'fantasy']
@@ -15473,8 +15404,7 @@ const movies: Movie[] = [
     ],
     lang: 'Catalan',
     reviews: 67,
-    url:
-      'https://jiathis.com/nisl/duis/bibendum/felis/sed/interdum/venenatis.jpg',
+    url: 'https://jiathis.com/nisl/duis/bibendum/felis/sed/interdum/venenatis.jpg',
     releaseDate: '7/17/2020',
     boxOffice: 19368798.18,
     genre: ['comedy', 'drama']
@@ -15744,8 +15674,7 @@ const movies: Movie[] = [
     ],
     lang: 'Tamil',
     reviews: 326,
-    url:
-      'http://chicagotribune.com/potenti/nullam/porttitor/lacus/at/turpis/donec.jsp',
+    url: 'http://chicagotribune.com/potenti/nullam/porttitor/lacus/at/turpis/donec.jsp',
     releaseDate: '3/29/2020',
     boxOffice: 7015801.46,
     genre: ['comedy', 'drama']
@@ -16016,8 +15945,7 @@ const movies: Movie[] = [
     ],
     lang: 'Armenian',
     reviews: 27402,
-    url:
-      'http://google.com.au/dolor/sit/amet/consectetuer/adipiscing/elit/proin.html',
+    url: 'http://google.com.au/dolor/sit/amet/consectetuer/adipiscing/elit/proin.html',
     releaseDate: '11/10/2019',
     boxOffice: 8576344.33,
     genre: ['drama']
@@ -16233,8 +16161,7 @@ const movies: Movie[] = [
     ],
     lang: 'Sotho',
     reviews: 46,
-    url:
-      'http://scientificamerican.com/nam/nulla/integer/pede/justo/lacinia/eget.png',
+    url: 'http://scientificamerican.com/nam/nulla/integer/pede/justo/lacinia/eget.png',
     releaseDate: '12/16/2019',
     boxOffice: 19086053.58,
     genre: ['crime']
@@ -16450,8 +16377,7 @@ const movies: Movie[] = [
     ],
     lang: 'Quechua',
     reviews: 5,
-    url:
-      'https://infoseek.co.jp/cum/sociis/natoque/penatibus/et/magnis/dis.aspx',
+    url: 'https://infoseek.co.jp/cum/sociis/natoque/penatibus/et/magnis/dis.aspx',
     releaseDate: '4/15/2020',
     boxOffice: 10591077.46,
     genre: ['comedy', 'romance']
@@ -16722,8 +16648,7 @@ const movies: Movie[] = [
     ],
     lang: 'Tetum',
     reviews: 83,
-    url:
-      'https://barnesandnoble.com/est/congue/elementum/in/hac/habitasse.html',
+    url: 'https://barnesandnoble.com/est/congue/elementum/in/hac/habitasse.html',
     releaseDate: '7/31/2020',
     boxOffice: 6530550.39,
     genre: ['children', 'drama']
@@ -17119,8 +17044,7 @@ const movies: Movie[] = [
     ],
     lang: 'Malagasy',
     reviews: 700,
-    url:
-      'http://cargocollective.com/congue/etiam/justo/etiam/pretium/iaculis/justo.js',
+    url: 'http://cargocollective.com/congue/etiam/justo/etiam/pretium/iaculis/justo.js',
     releaseDate: '6/14/2020',
     boxOffice: 12053798.78,
     genre: ['action', 'adventure', 'thriller', 'imax']
@@ -17156,8 +17080,7 @@ const movies: Movie[] = [
     ],
     lang: 'Hungarian',
     reviews: 24067,
-    url:
-      'https://bloglines.com/curae/duis/faucibus/accumsan/odio/curabitur/convallis.aspx',
+    url: 'https://bloglines.com/curae/duis/faucibus/accumsan/odio/curabitur/convallis.aspx',
     releaseDate: '12/9/2019',
     boxOffice: 19154476.94,
     genre: ['drama', 'romance']
@@ -17914,8 +17837,7 @@ const movies: Movie[] = [
     ],
     lang: 'Japanese',
     reviews: 24913,
-    url:
-      'https://lycos.com/faucibus/accumsan/odio/curabitur/convallis/duis.html',
+    url: 'https://lycos.com/faucibus/accumsan/odio/curabitur/convallis/duis.html',
     releaseDate: '11/1/2019',
     boxOffice: 19415105.09,
     genre: ['drama', 'romance']
@@ -18005,8 +17927,7 @@ const movies: Movie[] = [
     ],
     lang: 'Afrikaans',
     reviews: 54,
-    url:
-      'http://cyberchimps.com/mus/etiam/vel/augue/vestibulum/rutrum/rutrum.aspx',
+    url: 'http://cyberchimps.com/mus/etiam/vel/augue/vestibulum/rutrum/rutrum.aspx',
     releaseDate: '11/3/2019',
     boxOffice: 13992119.22,
     genre: ['horror', 'thriller']

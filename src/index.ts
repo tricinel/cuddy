@@ -6,24 +6,24 @@ type Funnel<Item> =
   | ((collection: Item[]) => FunnelWithFns<Item>)
   | FunnelWithFns<Item>;
 
-function cuddy<Item = Record<string, unknown>>(
-  stages: Partial<Stages<Item>>,
+function cuddy<Item, TransformedItem extends Item = Item>(
+  stages: Partial<Stages<TransformedItem>>,
   collection: Item[]
-): FunnelWithFns<Item>;
+): FunnelWithFns<TransformedItem>;
 
-function cuddy<Item>(
-  stages: Partial<Stages<Item>>
-): (collection: Item[]) => FunnelWithFns<Item>;
+function cuddy<Item, TransformedItem extends Item = Item>(
+  stages: Partial<Stages<TransformedItem>>
+): (collection: Item[]) => FunnelWithFns<TransformedItem>;
 
-function cuddy<Item = Record<string, unknown>>(
-  stages: Partial<Stages<Item>>,
+function cuddy<Item, TransformedItem extends Item = Item>(
+  stages: Partial<Stages<TransformedItem>>,
   collection?: Item[]
-): Funnel<Item> {
+): Funnel<TransformedItem> {
   return isNil(collection)
     ? // eslint-disable-next-line @typescript-eslint/no-shadow
-      (collection: Item[]): FunnelWithFns<Item> =>
-        _cuddy<Item>(stages, collection)
-    : _cuddy<Item>(stages, collection);
+      (collection: Item[]): FunnelWithFns<TransformedItem> =>
+        _cuddy<Item, TransformedItem>(stages, collection)
+    : _cuddy<Item, TransformedItem>(stages, collection);
 }
 
 export default cuddy;

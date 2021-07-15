@@ -55,7 +55,7 @@ describe('Match stage', () => {
       expect.objectContaining({
         collectionSize: books.length,
         totalOperations: 1,
-        summary: "COUNT BY 'title'"
+        summary: "COUNT the results BY 'title'"
       })
     );
   });
@@ -124,6 +124,8 @@ describe('Match stage', () => {
 });
 
 describe('All stages', () => {
+  const noop = (): void => {};
+
   test('explains a complete query', () => {
     const stages: Partial<Stages<Book>> = {
       match: {
@@ -137,10 +139,10 @@ describe('All stages', () => {
       orderBy: { reviews: 'asc', ratings: 'desc' },
       groupBy: 'title',
       transform: {
-        alias: { author: 'authorName' },
-        inc: { reviews: 1 },
-        dec: { ratings: 2 },
-        set: { onSale: false }
+        author: noop,
+        reviews: noop,
+        ratings: noop,
+        onSale: noop
       }
     };
     expect(explainPipeline<Book>(stages, books)).toEqual(
@@ -148,7 +150,7 @@ describe('All stages', () => {
         collectionSize: books.length,
         totalOperations: 14,
         summary:
-          "MATCH items in the collection WHERE 'author' is 'Rob Sinclair' AND 'title' is 'Dark' AND 'genres' contains 'Fiction'. ORDER the results BY 'reviews' from lowest to highest AND 'ratings' from highest to lowest. ONLY RETURN the 'author', 'title' and 'blurb' fields for each result. FOR EACH of the results, RENAME 'author' to 'authorName' AND INCREMENT 'reviews' by '1' AND DECREMENT 'ratings' by '2' AND SET 'onSale' to 'false'. SKIP the first 1 result. LIMIT to maximum 2 results. GROUP the results BY 'title'. COUNT BY 'reviews'"
+          "MATCH items in the collection WHERE 'author' is 'Rob Sinclair' AND 'title' is 'Dark' AND 'genres' contains 'Fiction'. ORDER the results BY 'reviews' from lowest to highest AND 'ratings' from highest to lowest. ONLY RETURN the 'author', 'title' and 'blurb' fields for each result. FOR EACH of the results, TRANSFORM 'author' AND TRANSFORM 'reviews' AND TRANSFORM 'ratings' AND TRANSFORM 'onSale'. SKIP the first 1 result. LIMIT to maximum 2 results. GROUP the results BY 'title'. COUNT the results BY 'reviews'"
       })
     );
   });
@@ -166,10 +168,10 @@ describe('All stages', () => {
       skip: 1,
       orderBy: { reviews: 'asc', ratings: 'desc' },
       transform: {
-        alias: { author: 'authorName' },
-        inc: { reviews: 1 },
-        dec: { ratings: 2 },
-        set: { onSale: false }
+        author: noop,
+        reviews: noop,
+        ratings: noop,
+        onSale: noop
       }
     };
     expect(explainPipeline<Book>(stages, books)).toEqual(
@@ -177,7 +179,7 @@ describe('All stages', () => {
         collectionSize: books.length,
         totalOperations: 14,
         summary:
-          "MATCH items in the collection WHERE 'author' is 'Rob Sinclair' AND 'title' is 'Dark' AND 'genres' contains 'Fiction'. ORDER the results BY 'reviews' from lowest to highest AND 'ratings' from highest to lowest. ONLY RETURN the 'author', 'title' and 'blurb' fields for each result. FOR EACH of the results, RENAME 'author' to 'authorName' AND INCREMENT 'reviews' by '1' AND DECREMENT 'ratings' by '2' AND SET 'onSale' to 'false'. SKIP the first 1 result. LIMIT to maximum 2 results. GROUP the results BY 'title'. COUNT BY 'reviews'"
+          "MATCH items in the collection WHERE 'author' is 'Rob Sinclair' AND 'title' is 'Dark' AND 'genres' contains 'Fiction'. ORDER the results BY 'reviews' from lowest to highest AND 'ratings' from highest to lowest. ONLY RETURN the 'author', 'title' and 'blurb' fields for each result. FOR EACH of the results, TRANSFORM 'author' AND TRANSFORM 'reviews' AND TRANSFORM 'ratings' AND TRANSFORM 'onSale'. SKIP the first 1 result. LIMIT to maximum 2 results. GROUP the results BY 'title'. COUNT the results BY 'reviews'"
       })
     );
   });

@@ -2,8 +2,15 @@
 
 import type { Operation } from './explain/query';
 
-// eslint-disable-next-line @typescript-eslint/consistent-indexed-object-style
-export type InferRecord<T, K = unknown> = Record<keyof T, K>;
+export type ExtendedItem<BaseItem, TransformedItem> = {
+  [K in keyof BaseItem | keyof TransformedItem]: K extends keyof TransformedItem
+    ? TransformedItem[K]
+    : K extends keyof BaseItem
+    ? BaseItem[K]
+    : never;
+};
+export type ShapeOf<Item> = { [K in keyof Item]: Item[K] };
+
 export type SortOrder = 'asc' | 'desc';
 export type Sort<Keys extends string> = Partial<Record<Keys, SortOrder>>;
 
@@ -18,19 +25,8 @@ export interface Matchers<Keys extends string> {
   lte: Partial<Record<Keys, number>>;
 }
 
-export interface Transformations<Keys extends string> {
-  inc: Partial<Record<Keys, number>>;
-  dec: Partial<Record<Keys, number>>;
-  set: Partial<Record<Keys, unknown>>;
-  alias: Partial<Record<Keys, string>>;
-}
-
 interface MatchStage<Keys extends string> {
   match: Partial<Matchers<Keys>>;
-}
-
-interface TransformStage<Keys extends string> {
-  transform: Partial<Transformations<Keys>>;
 }
 
 interface CountByStage<Keys extends string> {
@@ -57,8 +53,15 @@ interface SkipStage {
   skip: number;
 }
 
+export type Transform<Item> = (record: Item) => unknown;
+export type Transformations<Item> = Record<string, Transform<Item>>;
+
+interface TransformStage<Item> {
+  transform: Transformations<Item>;
+}
+
 export type Stages<T, Keys extends string = keyof T> = MatchStage<Keys> &
-  TransformStage<Keys> &
+  TransformStage<T> &
   CountByStage<Keys> &
   GroupByStage<Keys> &
   OrderByStage<Keys> &
@@ -73,6 +76,7 @@ export interface Explanation {
   query: Operation[];
   summary: string;
 }
+
 export interface FunnelWithFns<T, Picked = Partial<T>> {
   aggregate: () => Picked[];
   first: () => Picked;
@@ -81,37 +85,42 @@ export interface FunnelWithFns<T, Picked = Partial<T>> {
   explain: () => Explanation;
 }
 
-export type PipelineReduceOnceApplied<Item = Record<string, unknown>> = (
-  collection: readonly Item[]
-) => Item[];
+export type PipelineReduceOnceApplied<
+  Item,
+  TransformedItem extends Item = Item
+> = (collection: readonly Item[]) => TransformedItem[];
 
-export type PipelineCountOnceApplied<Item = Record<string, unknown>> = (
+export type PipelineCountOnceApplied<Item> = (
   collection: readonly Item[]
-) => Record<string, number>;
+) => Record<string, number>; // All keys are coerced to strings because of how JavaScript objects work
 
-export type PipelineGroupOnceApplied<Item = Record<string, unknown>> = (
+export type PipelineGroupOnceApplied<
+  Item,
+  TransformedItem extends Item = Item
+> = (
   collection: readonly Item[]
-) => Record<string, Item[]>;
+) => Record<keyof TransformedItem, TransformedItem[]>;
 
-export type PipelineReduceGroupOnceApplied<Item = Record<string, unknown>> = (
-  groupedCollection: Record<keyof Item, readonly Item[]>
-) => Record<string, Item[]>;
+export type PipelineReduceGroupOnceApplied<TransformedItem> = (
+  groupedCollection: Record<keyof TransformedItem, readonly TransformedItem[]>
+) => Record<string, TransformedItem[]>;
 
-export type PipelineTransformOnceApplied<Item = Record<string, unknown>> = (
-  collection: readonly Item[]
-) => Record<string, unknown>[];
+// export type PipelineTransformOnceApplied<
+//   Item,
+//   TransformedItem extends Item = Item
+// > = (collection: readonly Item[]) => TransformedItem[];
 
 export type PipelineDefaultOnceApplied<Collection> = (
   collection: Collection
 ) => Collection;
 
-export type PipelineFn<Item> =
-  | PipelineCountOnceApplied<Item>
-  | PipelineGroupOnceApplied<Item>
-  | PipelineTransformOnceApplied<Item>
-  | PipelineReduceOnceApplied<Item>
-  | PipelineReduceGroupOnceApplied<Item>
-  | PipelineDefaultOnceApplied<Item>;
+// export type PipelineFn<Stages, Item, TransformedItem extends Item = Item> = Stages extends CountByStage<keyof TransformedItem> ? PipelineCountOnceApplied<Item, TransformedItem> : Stages extends GroupByStage<keyof TransformedItem> ? PipelineGroupOnceApplied<Item, TransformedItem> : PipelineReduceOnceApplied<Item, TransformedItem>;
+
+export type PipelineFn<Item, TransformedItem extends Item = Item> =
+  | PipelineCountOnceApplied<TransformedItem>
+  | PipelineGroupOnceApplied<Item, TransformedItem>
+  | PipelineReduceOnceApplied<Item, TransformedItem>
+  | PipelineReduceGroupOnceApplied<Item>;
 
 export type Pipeline<T> = () => FunnelWithFns<T>;
 export type PipelineNoCollection<T> = (collection: T[]) => FunnelWithFns<T>;

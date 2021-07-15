@@ -7,8 +7,10 @@ import {
   fromPairs,
   apply,
   filter,
-  unnest
+  unnest,
+  type
 } from 'ramda';
+import type { PropType } from './errors';
 import { isObject } from './guards';
 
 export function keyDiff<T extends Record<string, unknown>>(
@@ -19,7 +21,13 @@ export function keyDiff<T extends Record<string, unknown>>(
     isObject(value) ? keyDiff(checkAgainst, value) : [key];
   const duplicates = (xs: string[]): string[] => difference(xs, checkAgainst);
 
-  const deepDiff: (obj: T) => string[] = compose(
+  const deepDiff = compose<
+    T,
+    [string, unknown][],
+    string[][],
+    string[],
+    string[]
+  >(
     duplicates, // => string[]
     flatten, // => string[]
     map(pickKey), // => string[][]
@@ -29,18 +37,36 @@ export function keyDiff<T extends Record<string, unknown>>(
   return deepDiff(checkFor);
 }
 
+export function valueDiffInList(
+  list: unknown[],
+  checkFor: PropType
+): Record<string, unknown> {
+  return list.reduce<Record<string, unknown>>(function matchWrongValueTypes(
+    matches,
+    value,
+    index
+  ) {
+    return {
+      ...matches,
+      ...(type(value) !== checkFor && { [index]: value })
+    };
+  },
+  {});
+}
+
 export function diff<O extends Record<string, unknown>>(
   pred: (key: keyof O, value: never) => boolean,
   obj: O
 ): Record<string, unknown> {
   type KeyValueOrObjectPair = [string, Record<string, unknown> | unknown];
   type KeyValuePair = [string, unknown];
-  const unfoldObj: (o: Record<string, unknown>) => KeyValuePair[] = compose(
-    filter(apply(pred)),
-    unnest,
-    map(pickPair),
-    toPairs
-  );
+  const unfoldObj = compose<
+    Record<string, unknown>,
+    KeyValueOrObjectPair[],
+    KeyValuePair[][],
+    KeyValuePair[],
+    KeyValuePair[]
+  >(filter(apply(pred)), unnest, map(pickPair), toPairs);
 
   function pickPair([key, value]: KeyValueOrObjectPair): KeyValuePair[] {
     return isObject(value) ? unfoldObj(value) : [[key, value]];

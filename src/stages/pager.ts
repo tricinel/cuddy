@@ -1,5 +1,5 @@
 import { is, slice } from 'ramda';
-import type { InferRecord, PipelineReduceOnceApplied } from '../types';
+import type { ShapeOf, PipelineReduceOnceApplied } from '../types';
 import { invalidValue } from '../utils/errors';
 import type { LogMessage } from '../utils/errors';
 import toStringIfNeeded from '../utils/toString';
@@ -25,7 +25,7 @@ export function validate(
   ];
 }
 
-export default function segment<Item extends InferRecord<Item>>({
+export default function segment<Item extends ShapeOf<Item>>({
   limit = Infinity,
   skip = 0
 }: Pager): PipelineReduceOnceApplied<Item> {

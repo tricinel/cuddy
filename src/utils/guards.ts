@@ -43,3 +43,33 @@ export function isObject(obj: unknown): obj is Record<string, unknown> {
     Object.getPrototypeOf(obj) === Object.prototype
   );
 }
+
+function defaultTyeErrorMessage(
+  value: unknown,
+  type: 'number' | 'string' | 'object' | 'boolean'
+): string {
+  return `The value should to be a ${type}! You passed ${typeof value}!`;
+}
+
+export function assertIsDefined(
+  value: unknown,
+  errorMessage = 'The value is undefined!'
+): asserts value is
+  | number
+  | string
+  | boolean
+  | Record<string, unknown>
+  | unknown[] {
+  if (typeof value === 'undefined') {
+    throw new TypeError(errorMessage);
+  }
+}
+
+export function assertIsNumber(
+  value: unknown,
+  errorMessage = defaultTyeErrorMessage(value, 'number')
+): asserts value is number {
+  if (typeof value !== 'number') {
+    throw new TypeError(errorMessage);
+  }
+}

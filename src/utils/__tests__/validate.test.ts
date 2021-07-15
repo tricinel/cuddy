@@ -99,62 +99,6 @@ test('Validate that the match stage has the correct value types for certain item
   `);
 });
 
-test('Validate that the transform stage has only the correct item keys', () => {
-  expect(
-    validateStages<Item>({ transform: { inc: { count: 1 } } }, item)
-  ).toEqual([]);
-
-  expect(
-    validateStages<Item>(
-      // @ts-expect-error foo and baz shouldn't exist in there
-      { transform: { set: { foo: 'bar', title: 'One' }, inc: { baz: 1 } } },
-      item
-    )
-  ).toMatchInlineSnapshot(`
-    Array [
-      Object {
-        "level": "warn",
-        "message": "'transform.set.foo' may not exist on the items in your collection.",
-      },
-      Object {
-        "level": "warn",
-        "message": "'transform.inc.baz' may not exist on the items in your collection.",
-      },
-    ]
-  `);
-});
-
-test('Validate that the transform stage has the correct value types for certain item keys', () => {
-  const valid = {
-    inc: { count: 1 },
-    dec: { count: 3 },
-    set: { count: 2 },
-    alias: { count: 'foo' }
-  };
-
-  const invalid = {
-    inc: { count: 'foo' },
-    dec: { count: 'foo' }
-  };
-
-  expect(validateStages<Item>({ transform: valid }, item)).toEqual([]);
-  expect(
-    // @ts-expect-error invalid should be invalid, duh :)
-    validateStages<Item>({ transform: invalid }, item)
-  ).toMatchInlineSnapshot(`
-    Array [
-      Object {
-        "level": "error",
-        "message": "'transform.inc.count' should be a 'Number'. You passed 'foo'.",
-      },
-      Object {
-        "level": "error",
-        "message": "'transform.dec.count' should be a 'Number'. You passed 'foo'.",
-      },
-    ]
-  `);
-});
-
 test('Validate that the orderBy stage has only the correct item keys', () => {
   expect(validateStages<Item>({ orderBy: { title: 'asc' } }, item)).toEqual([]);
 
@@ -270,6 +214,27 @@ test('Validate that the groupBy stage has only the correct item keys', () => {
       Object {
         "level": "error",
         "message": "'groupBy' should be one of 'title, author, count'. You passed 'foo'.",
+      },
+    ]
+  `);
+});
+
+test('Validate that the transform stage is of the correct type', () => {
+  function always(value: unknown) {
+    return function transform(_record: unknown) {
+      return value;
+    };
+  }
+  expect(
+    validateStages<Item>({ transform: { author: always(true) } }, item)
+  ).toEqual([]);
+  // @ts-expect-error foo should be an object
+  expect(validateStages<Item>({ transform: 'foo' }, item))
+    .toMatchInlineSnapshot(`
+    Array [
+      Object {
+        "level": "error",
+        "message": "'transform' should be a 'Object'. You passed 'string'.",
       },
     ]
   `);

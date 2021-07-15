@@ -14,7 +14,13 @@ import toStringIfNeeded from './toString';
 
 // eslint-disable-next-line import/no-unused-modules
 export type Level = 'error' | 'warn' | 'info';
-type PropType = 'String' | 'Number' | 'Boolean' | 'Object' | 'Array';
+export type PropType =
+  | 'String'
+  | 'Number'
+  | 'Boolean'
+  | 'Object'
+  | 'Array'
+  | 'Function';
 
 // eslint-disable-next-line import/no-unused-modules
 export interface LogMessage {

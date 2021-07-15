@@ -14,7 +14,7 @@ export function buildProjectOperation(fields: string[]): ProjectOperation {
   }
 
   const firstFields = init(fields);
-  const lastField = last(fields) as string;
+  const lastField = last(fields) ?? '';
   const commaSeparatedFields = compose(
     join(', '),
     map(quoteField)

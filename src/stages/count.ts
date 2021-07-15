@@ -1,6 +1,6 @@
 import { prop, countBy, compose, includes } from 'ramda';
 import toStringIfNeeded from '../utils/toString';
-import type { InferRecord, PipelineCountOnceApplied } from '../types';
+import type { PipelineCountOnceApplied } from '../types';
 import { invalidValue } from '../utils/errors';
 import type { LogMessage } from '../utils/errors';
 
@@ -20,8 +20,8 @@ export function validate(
   ];
 }
 
-export default function count<Item extends InferRecord<Item>>(
-  field: string
+export default function count<Item>(
+  field: keyof Item
 ): PipelineCountOnceApplied<Item> {
-  return countBy(compose(toStringIfNeeded, prop(field)));
+  return countBy<Item>(compose(toStringIfNeeded, prop(field)));
 }

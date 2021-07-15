@@ -1,29 +1,36 @@
 import dts from 'rollup-plugin-dts';
 import esbuild from 'rollup-plugin-esbuild';
 
-const pkgName = require('./package.json').main.replace(/\.js$/, '');
-
-const ext = (format) =>
-  format === 'dts' ? 'd.ts' : format === 'cjs' ? 'js' : 'mjs';
+const ext = (format) => (format === 'dts' ? 'd.ts' : 'js');
 
 const bundle = (format, production = false) => ({
   input: 'src/index.ts',
   output: {
-    file: `${pkgName}${production ? '.min' : ''}.${ext(format)}`,
-    format: format === 'cjs' ? 'cjs' : 'es',
+    file: `dist/cuddy${production ? '.min' : ''}.${ext(format)}`,
+    format: 'es',
     sourcemap: format !== 'dts',
-    exports: format === 'cjs' ? 'named' : 'default'
+    exports: 'default'
   },
   plugins: format === 'dts' ? [dts()] : [esbuild({ minify: production })],
   external: (id) => !/^[./]/.test(id)
 });
 
+const helpers = (format, production = false) => ({
+  input: `src/helpers/index.ts`,
+  output: {
+    file: `dist/helpers/index${production ? '.min' : ''}.${ext(format)}`,
+    format: 'es',
+    sourcemap: format !== 'dts'
+  },
+  plugins: format === 'dts' ? [dts()] : [esbuild({ minify: production })],
+  external: (id) => !/^[./]/.test(id)
+});
+
+const outputs = [['dts'], ['es'], ['es', true]];
+
 const bundles = [
-  bundle('dts'),
-  bundle('es'),
-  bundle('cjs'),
-  bundle('es', true),
-  bundle('cjs', true)
+  ...outputs.map(([format, production = false]) => bundle(format, production)),
+  ...outputs.map(([format, production = false]) => helpers(format, production))
 ];
 
 export default bundles;

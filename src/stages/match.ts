@@ -8,11 +8,7 @@ import gte from '../matchers/gte';
 import lte from '../matchers/lte';
 import { isValidRecord } from '../utils/guards';
 import type { LogMessage } from '../utils/errors';
-import type {
-  InferRecord,
-  Matchers,
-  PipelineReduceOnceApplied
-} from '../types';
+import type { ShapeOf, Matchers, PipelineReduceOnceApplied } from '../types';
 import { checkForNumbersOnly, checkKeys } from '../utils/checks';
 
 function checkValues<Item>(ops: Partial<Matchers<keyof Item>>): LogMessage[] {
@@ -44,7 +40,7 @@ export function validate<Item>(
 }
 
 export default function match<
-  Item extends InferRecord<Item>,
+  Item extends ShapeOf<Item>,
   Keys extends string = keyof Item
 >(matchers: Partial<Matchers<Keys>>): PipelineReduceOnceApplied<Item>[] {
   const fns: PipelineReduceOnceApplied<Item>[] = [];

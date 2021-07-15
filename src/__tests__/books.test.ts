@@ -1,7 +1,9 @@
+import { always, split, prop } from 'ramda';
 import cuddy from '..';
 import books from '../__mocks__/books';
 import type { Book } from '../__mocks__/books';
 import type { Stages } from '../types';
+import { inc, dec, set } from '../helpers';
 
 // To simplify some of the inline snapshots, let's pick just the title, author and price
 const defaultFields: (keyof Book)[] = ['title', 'author', 'price'];
@@ -228,10 +230,13 @@ describe('Match books', () => {
 
 describe('Transform books', () => {
   test('change the property name summary to excerpt for all books', () => {
-    const fields: (keyof Book)[] = ['title', 'summary'];
-    const pipeline = cuddy<Book>({
+    interface BookWithExcerpt extends Book {
+      excerpt: string;
+    }
+    const fields: (keyof BookWithExcerpt)[] = ['title', 'excerpt'];
+    const pipeline = cuddy<Book, BookWithExcerpt>({
       fields,
-      transform: { alias: { summary: 'excerpt' } }
+      transform: { excerpt: prop('summary') }
     });
     const results = pipeline(books).aggregate();
     expect(results).toHaveLength(books.length);
@@ -265,7 +270,7 @@ describe('Transform books', () => {
     const fields: (keyof Book)[] = ['title', 'reviews'];
     const pipeline = cuddy<Book>({
       fields,
-      transform: { inc: { reviews: 10 } }
+      transform: { reviews: inc(10, 'reviews') }
     });
     const results = pipeline(books).aggregate();
     expect(results).toMatchInlineSnapshot(`
@@ -298,7 +303,7 @@ describe('Transform books', () => {
     const fields: (keyof Book)[] = ['title', 'reviews'];
     const pipeline = cuddy<Book>({
       fields,
-      transform: { dec: { reviews: 10 } }
+      transform: { reviews: dec(10, 'reviews') }
     });
     const results = pipeline(books).aggregate();
     expect(results).toMatchInlineSnapshot(`
@@ -331,7 +336,7 @@ describe('Transform books', () => {
     const fields: (keyof Book)[] = ['title', 'onSale'];
     const pipeline = cuddy<Book>({
       fields,
-      transform: { set: { onSale: true } }
+      transform: { onSale: set(true) }
     });
     const results = pipeline(books).aggregate();
     expect(results).toMatchInlineSnapshot(`
@@ -484,8 +489,87 @@ describe('Count books', () => {
   });
 });
 
+describe('Transform books', () => {
+  test('all books should now be on sale', () => {
+    const fields: (keyof Book)[] = ['onSale'];
+    const pipeline = cuddy<Book>({
+      fields,
+      transform: { onSale: always(true) }
+    });
+    const results = pipeline(books).aggregate();
+    expect(results).toMatchInlineSnapshot(`
+      Array [
+        Object {
+          "onSale": true,
+        },
+        Object {
+          "onSale": true,
+        },
+        Object {
+          "onSale": true,
+        },
+        Object {
+          "onSale": true,
+        },
+        Object {
+          "onSale": true,
+        },
+      ]
+    `);
+  });
+
+  test('all books should have a new field based on an existing field', () => {
+    interface BookWithFirstName extends Book {
+      firstName: string;
+    }
+    function valueAt(idx: number, field: keyof Book): (r: Book) => unknown {
+      return function transform(record): unknown {
+        const fieldValue = prop(field, record);
+
+        if (typeof fieldValue === 'string') {
+          const values = split(' ', fieldValue);
+          return values[idx];
+        }
+
+        return null;
+      };
+    }
+    const fields: (keyof Book)[] = ['author'];
+    const pipeline = cuddy<Book, BookWithFirstName>({
+      fields,
+      transform: { firstName: valueAt(0, 'author') }
+    });
+    const results = pipeline(books).aggregate();
+    expect(results).toMatchInlineSnapshot(`
+      Array [
+        Object {
+          "author": "Douglas W. Hubbard",
+          "firstName": "Douglas",
+        },
+        Object {
+          "author": "Rob Sinclair",
+          "firstName": "Rob",
+        },
+        Object {
+          "author": "Rob Sinclair",
+          "firstName": "Rob",
+        },
+        Object {
+          "author": "Blake Crouch",
+          "firstName": "Blake",
+        },
+        Object {
+          "author": "Blake Crouch",
+          "firstName": "Blake",
+        },
+      ]
+    `);
+  });
+});
+
 describe('Explain books', () => {
   test('explain the query', () => {
+    const noop = (): void => {};
     const query: Partial<Stages<Book>> = {
       match: {
         in: { genres: 'Fiction' },
@@ -494,7 +578,8 @@ describe('Explain books', () => {
       },
       orderBy: { ratings: 'asc', reviews: 'desc' },
       countBy: 'ratings',
-      fields: ['author', 'title', 'ratings']
+      fields: ['author', 'title', 'ratings'],
+      transform: { author: noop, title: noop, blurb: noop }
     };
     const pipeline = cuddy<Book>(query);
     const explanation = pipeline(books).explain();
@@ -546,14 +631,29 @@ describe('Explain books', () => {
             "type": "fields",
           },
           Object {
+            "field": "author",
+            "query": "TRANSFORM 'author'",
+            "type": "transform",
+          },
+          Object {
+            "field": "title",
+            "query": "TRANSFORM 'title'",
+            "type": "transform",
+          },
+          Object {
+            "field": "blurb",
+            "query": "TRANSFORM 'blurb'",
+            "type": "transform",
+          },
+          Object {
             "field": "ratings",
             "query": "'ratings'",
             "type": "countBy",
           },
         ],
-        "queryHash": "1qtpmis",
-        "summary": "MATCH items in the collection WHERE 'genres' contains 'Fiction' AND 'price' is greater than '9' AND 'price' is lower than or equal to '5'. ORDER the results BY 'ratings' from lowest to highest AND 'reviews' from highest to lowest. ONLY RETURN the 'author', 'title' and 'ratings' fields for each result. COUNT BY 'ratings'",
-        "totalOperations": 7,
+        "queryHash": "y08vyc",
+        "summary": "MATCH items in the collection WHERE 'genres' contains 'Fiction' AND 'price' is greater than '9' AND 'price' is lower than or equal to '5'. ORDER the results BY 'ratings' from lowest to highest AND 'reviews' from highest to lowest. ONLY RETURN the 'author', 'title' and 'ratings' fields for each result. FOR EACH of the results, TRANSFORM 'author' AND TRANSFORM 'title' AND TRANSFORM 'blurb'. COUNT the results BY 'ratings'",
+        "totalOperations": 10,
       }
     `);
   });

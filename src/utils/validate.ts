@@ -11,14 +11,15 @@ import { validate as validateTransformations } from '../stages/transform';
 import type { Stages } from '../types';
 import type { LogMessage } from './errors';
 import { invalidValue } from './errors';
+import combineFields from './combineFields';
 
 // eslint-disable-next-line complexity
-export default function validateStages<Item>(
-  stages: Partial<Stages<Item>>,
-  item: Item
-): LogMessage[] {
+export default function validateStages<
+  Item,
+  TransformedItem extends Item = Item
+>(stages: Partial<Stages<TransformedItem>>, item: Item): LogMessage[] {
   const errors: LogMessage[] = [];
-  const itemKeys = keys(item);
+  const itemKeys = combineFields(keys(item), keys(stages.transform ?? {}));
 
   // Check if there are invalid stages
 
@@ -73,8 +74,7 @@ export default function validateStages<Item>(
 
   if (hasStage(stages.transform)) {
     const [invalid, transformErrors] = validateTransformations(
-      stages.transform,
-      itemKeys
+      stages.transform
     );
     invalid && errors.push(...transformErrors);
   }

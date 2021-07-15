@@ -16,5 +16,5 @@ export function buildCountByOperation(field: string): CountByOperation {
 }
 
 export default function explainLimit(operation: CountByOperation): string {
-  return concat('COUNT BY ')(operation.query);
+  return concat('COUNT the results BY ')(operation.query);
 }

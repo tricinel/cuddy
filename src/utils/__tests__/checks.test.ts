@@ -1,4 +1,8 @@
-import { checkForNumbersOnly, checkKeys } from '../checks';
+import {
+  checkForNumbersOnly,
+  checkKeys,
+  checkForFunctionsOnly
+} from '../checks';
 
 test('Contains only numbers as values', () => {
   const valid = { foo: 1, bar: 2, deep: { nested: 3 } };
@@ -18,6 +22,26 @@ test('Contains only numbers as values', () => {
       Object {
         "level": "error",
         "message": "'check.nested' should be a 'Number'. You passed 'fii'.",
+      },
+    ]
+  `);
+});
+
+test('Contains only functions as values', () => {
+  const noop = (): void => {};
+  const valid = { foo: noop, bar: noop };
+  expect(checkForFunctionsOnly('check', valid)).toEqual([]);
+
+  const invalid = { foo: 'bar', bar: 'baz' };
+  expect(checkForFunctionsOnly('check', invalid)).toMatchInlineSnapshot(`
+    Array [
+      Object {
+        "level": "error",
+        "message": "'check.foo' should be a 'Function'. You passed 'bar'.",
+      },
+      Object {
+        "level": "error",
+        "message": "'check.bar' should be a 'Function'. You passed 'baz'.",
       },
     ]
   `);

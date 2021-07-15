@@ -1,6 +1,6 @@
 import { prop, groupBy, compose, includes } from 'ramda';
 import toStringIfNeeded from '../utils/toString';
-import type { InferRecord, PipelineGroupOnceApplied } from '../types';
+import type { ShapeOf, PipelineGroupOnceApplied } from '../types';
 import { invalidValue } from '../utils/errors';
 import type { LogMessage } from '../utils/errors';
 
@@ -20,7 +20,7 @@ export function validate(
   ];
 }
 
-export default function group<Item extends InferRecord<Item>>(
+export default function group<Item extends ShapeOf<Item>>(
   field: string
 ): PipelineGroupOnceApplied<Item> {
   return groupBy(compose(toStringIfNeeded, prop(field)));

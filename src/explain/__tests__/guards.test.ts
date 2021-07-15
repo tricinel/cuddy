@@ -114,9 +114,7 @@ test('Correctly determines if it is a transform stage or not', () => {
   const transform: TransformOperation[] = [
     {
       type: 'transform',
-      operator: 'alias',
       field: 'title',
-      transformation: 'name',
       query: ''
     }
   ];

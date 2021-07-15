@@ -34,12 +34,6 @@ const operators = {
     in: 'contains',
     nin: 'does not contain'
   },
-  transform: {
-    alias: (field: string): string => `RENAME '${field}' to`,
-    inc: (field: string): string => `INCREMENT '${field}' by`,
-    dec: (field: string): string => `DECREMENT '${field}' by`,
-    set: (field: string): string => `SET '${field}' to`
-  },
   orderBy: {
     asc: 'from lowest to highest',
     desc: 'from highest to lowest'

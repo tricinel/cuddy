@@ -3,8 +3,8 @@ import buildQuery from './explain/query';
 import summarize from './explain/summary';
 import hash from './utils/hash';
 
-export default function explain<Item>(
-  stages: Partial<Stages<Item>>,
+export default function explain<Item, TransformedItem extends Item = Item>(
+  stages: Partial<Stages<TransformedItem>>,
   collection: Item[]
 ): Explanation {
   const query = buildQuery(stages);

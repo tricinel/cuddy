@@ -16,9 +16,10 @@ Import cuddy and create the query.
 
 ```js
 import cuddy from 'cuddy';
+import { copyFrom } from 'cuddy/transform/helpers';
 
 const query = {
-  fields: ['title', 'url', 'runTime'],
+  fields: ['title', 'permalink', 'runTime'],
   match: {
     in: { genre: 'Comedy', cast: 'Adam Sandler' },
     eq: { lang: 'en' }
@@ -28,7 +29,7 @@ const query = {
   },
   groupBy: 'director',
   transform: {
-    alias: { url: 'permalink' }
+    permalink: copyFrom('url')
   },
   limit: 2,
   skip: 1
@@ -41,8 +42,8 @@ The above query translates into:
 - I want only 2 results and I want to skip the first item in the list.
 - I want to order the items by `reviews` in ascending order.
 - I want to group the items by `director`.
-- From all the fields of each item, I only want the `title`, `url` and `runTime`.
-- I want to rename the field `url` to `permalink`.
+- I want to create a new field called `permalink` and set its value to that of the `url` field.
+- From all the fields of each item, I only want the `title`, `permalink` and `runTime`.
 
 Next, build the pipeline and aggregate your data.
 
@@ -79,7 +80,7 @@ The aggregation pipeline contains the following stages:
 - [Grouping](./docs/group.md). Group the items by a specified field.
 - [Count](./docs/count.md). Count the items by a specified field.
 - [Project](./docs/project.md). Limit the fields that are returned for each item.
-- [Transform](./docs/transform.md). Transform any of the properties of the matched items.
+- [Transform](./docs/transform.md). Transform existing properties and add new properties to the matched items.
 
 ### Pipeline functions
 

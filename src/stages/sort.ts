@@ -1,6 +1,6 @@
 import { prop, ascend, descend, sortWith, includes, isEmpty } from 'ramda';
 import type {
-  InferRecord,
+  ShapeOf,
   PipelineReduceOnceApplied,
   Sort,
   SortOrder
@@ -42,7 +42,7 @@ export function validate<Item>(
   return [errors.length > 0, errors];
 }
 
-export default function order<Item extends InferRecord<Item>>(
+export default function order<Item extends ShapeOf<Item>>(
   orderBy: Sort<keyof Item>
 ): PipelineReduceOnceApplied<Item> {
   return sortWith(
