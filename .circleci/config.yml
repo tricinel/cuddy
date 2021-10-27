@@ -4,7 +4,7 @@ orbs:
 jobs:
   run-unit-tests:
     executor:
-      name: node/default
+      name: node/16.13
     steps:
       - checkout
       - node/install-packages:
