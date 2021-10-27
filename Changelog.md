@@ -1,3 +1,10 @@
+### v0.3.0
+
+---
+
+- Transformations now accept functions from the user
+- Add and export some ready-to-use transformation functions
+
 ### v0.2.0
 
 ---
