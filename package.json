@@ -12,8 +12,8 @@
   "type": "module",
   "license": "MIT",
   "engines": {
-    "node": ">= 14.16",
-    "npm": ">= 6"
+    "node": ">= 16.13",
+    "npm": ">= 8"
   },
   "repository": {
     "type": "git",
