@@ -3,12 +3,18 @@
   "description": "An aggregation pipeline built in a functional programming style that lets you search, group, order and transform a collection.",
   "version": "0.3.0-beta.0",
   "author": "Bogdan Lazar",
+  "main": "./dist/cuddy.js",
   "exports": {
     ".": "./dist/cuddy.js",
-    "./helpers": "./dist/helpers.js",
+    "./helpers": "./dist/helpers/index.js",
     "./package.json": "./package.json"
   },
-  "typings": "dist/cuddy.d.ts",
+  "typesVersions": {
+    "*": {
+      ".": ["dist/cuddy.d.ts"],
+      "helpers": ["dist/helpers/index.d.ts"]
+    }
+  },
   "type": "module",
   "license": "MIT",
   "engines": {
