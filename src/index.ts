@@ -4,6 +4,7 @@ import type { Stages, FunnelWithFns } from './types';
 
 type Funnel<Item> =
   | ((collection: Item[]) => FunnelWithFns<Item>)
+  // eslint-disable-next-line @typescript-eslint/no-type-alias
   | FunnelWithFns<Item>;
 
 function cuddy<Item, TransformedItem extends Item = Item>(

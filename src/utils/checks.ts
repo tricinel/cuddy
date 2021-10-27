@@ -9,9 +9,9 @@ import {
   map,
   concat
 } from 'ramda';
-import { diff, valueDiffInList } from './diff';
+import { diff } from './diff';
 import { toInvalidValues, invalidProp } from './errors';
-import type { LogMessage, PropType } from './errors';
+import type { LogMessage } from './errors';
 import flattenObjWithKeyPaths from './flattenObjectWithKeyPaths';
 
 function valueIsNumber(_key: string, value: unknown): value is number {
@@ -57,16 +57,4 @@ export function checkForFunctionsOnly(
   return isEmpty(invalid)
     ? []
     : toInvalidValues(`${prefix}.`, 'Function', invalid);
-}
-
-export function checkValuesIn(
-  prefix: string,
-  list: unknown[],
-  requiredType: PropType
-): LogMessage[] {
-  const invalid = valueDiffInList(list, requiredType);
-
-  return isEmpty(invalid)
-    ? []
-    : toInvalidValues(`${prefix}.`, requiredType, invalid);
 }

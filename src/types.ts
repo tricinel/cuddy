@@ -105,16 +105,9 @@ export type PipelineReduceGroupOnceApplied<TransformedItem> = (
   groupedCollection: Record<keyof TransformedItem, readonly TransformedItem[]>
 ) => Record<string, TransformedItem[]>;
 
-// export type PipelineTransformOnceApplied<
-//   Item,
-//   TransformedItem extends Item = Item
-// > = (collection: readonly Item[]) => TransformedItem[];
-
 export type PipelineDefaultOnceApplied<Collection> = (
   collection: Collection
 ) => Collection;
-
-// export type PipelineFn<Stages, Item, TransformedItem extends Item = Item> = Stages extends CountByStage<keyof TransformedItem> ? PipelineCountOnceApplied<Item, TransformedItem> : Stages extends GroupByStage<keyof TransformedItem> ? PipelineGroupOnceApplied<Item, TransformedItem> : PipelineReduceOnceApplied<Item, TransformedItem>;
 
 export type PipelineFn<Item, TransformedItem extends Item = Item> =
   | PipelineCountOnceApplied<TransformedItem>
