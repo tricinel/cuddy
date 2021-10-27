@@ -5,7 +5,7 @@ jobs:
   run-unit-tests:
     executor:
       name: node/default
-      tag: "lts"
+      tag: "17.0"
     steps:
       - checkout
       - node/install-packages:
