@@ -1,12 +1,17 @@
-<h1 style="text-align: center">cuddy</h1>
+<h1 align="center">cuddy</h1>
 
-<p style="text-align: center">![crazy looking donkey](./cuddy-logo.png)</p>
+<p align="center"><img src="./cuddy-logo.png" alt="crazy looking donkey" /></p>
 
-<p style="text-align: center">**cuddy** is an aggregation pipeline built in a functional programming style. If you ever wanted to search through a collection using logical operators, sort, group, transform and return only the fields you care about, then cuddy is for you.</p>
+<p align="center"><strong>cuddy</strong> is an aggregation pipeline built in a functional programming style. If you ever wanted to search through a collection using logical operators, sort, group, transform and return only the fields you care about, then cuddy is for you.</p>
 
-<p style="text-align: center">![Npm version][npm-version-badge] ![Build status][build-status-badge] ![Node Version][node-version-badge] ![License][license-badge]</p>
+<p align="center">
+  <img src="https://img.shields.io/npm/v/cuddy?style=flat-square" alt="npm version badge" />
+  <img src="https://img.shields.io/circleci/build/github/tricinel/cuddy?label=circleci&style=flat-square" alt="npm version badge" />
+  <img src="https://img.shields.io/node/v/cuddy?style=flat-square" alt="node version badge" />
+  <img src="https://img.shields.io/npm/l/cuddy.svg?style=flat-square" alt="license version badge" />
+</p>
 
-<p style="text-align: center"><em>The cuddy donkey logo designed by the talented [Laura Dinulescu](https://www.linkedin.com/in/lauradinulescu/).</em></p>
+<p align="center"><em>The cuddy donkey logo designed by the talented [Laura Dinulescu](https://www.linkedin.com/in/lauradinulescu/).</em></p>
 
 ## Install
 
@@ -111,14 +116,8 @@ The donkey is used as a working animal and is considered the cheapest form of la
 - Run tests with `npm run test` or `yarn test`.
 - Run the lint with `npm run lint` or `yarn lint`.
 
-For details, check out the [Contributing][contributing] guide.
+For details, check out the [Contributing][./Contributing.md] guide.
 
 ##### LICENSE
 
 MIT
-
-[contributing]: ./Contributing.md
-[license-badge]: https://img.shields.io/npm/l/cuddy.svg?style=flat-square
-[node-version-badge]: https://img.shields.io/node/v/cuddy?style=flat-square
-[npm-version-badge]: https://img.shields.io/npm/v/cuddy?style=flat-square
-[build-status-badge]: https://img.shields.io/circleci/build/github/tricinel/cuddy?label=circleci&style=flat-square
