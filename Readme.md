@@ -1,8 +1,12 @@
-# cuddy
+<h1 style="text-align: center">cuddy</h1>
 
-**cuddy** is an aggregation pipeline built in a functional programming style. If you ever wanted to search through a collection using logical operators, sort, group, transform and return only the fields you care about, then cuddy is for you.
+<p style="text-align: center">![crazy looking donkey](./cuddy-logo.png)</p>
 
-![Npm version][npm-version-badge] ![Build status][build-status-badge] ![Node Version][node-version-badge] ![License][license-badge]
+<p style="text-align: center">**cuddy** is an aggregation pipeline built in a functional programming style. If you ever wanted to search through a collection using logical operators, sort, group, transform and return only the fields you care about, then cuddy is for you.</p>
+
+<p style="text-align: center">![Npm version][npm-version-badge] ![Build status][build-status-badge] ![Node Version][node-version-badge] ![License][license-badge]</p>
+
+<p style="text-align: center"><em>The cuddy donkey logo designed by the talented [Laura Dinulescu](https://www.linkedin.com/in/lauradinulescu/).</em></p>
 
 ## Install
 
