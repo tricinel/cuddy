@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/npm/l/cuddy.svg?style=flat-square" alt="license version badge" />
 </p>
 
-<p align="center"><em>The cuddy donkey logo designed by the talented [Laura Dinulescu](https://www.linkedin.com/in/lauradinulescu/).</em></p>
+<p align="center"><em>The cuddy donkey logo designed by the talented <a href="https://www.linkedin.com/in/lauradinulescu/">Laura Dinulescu</a>.</em></p>
 
 ## Install
 
